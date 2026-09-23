@@ -1,0 +1,9 @@
+{
+  "legacy_id": "LEG005",
+  "device_type": "MOTOR",
+  "instance_id": "9",
+  "source_reference": "MOTOR-000001.txt",
+  "measurement_condition": "MOTOR-000001.txt由来",
+  "note": "ATM-2 / Instance 9 / MOTOR-000001.txt由来",
+  "conversion_policy": "legacy mapping only; original historical data is preserved and no measurement values are recalculated or replaced"
+}
