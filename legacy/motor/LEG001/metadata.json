@@ -1,0 +1,8 @@
+{
+  "legacy_id": "LEG001",
+  "device_type": "MOTOR",
+  "instance_id": "10",
+  "measurement_condition": "開封直後",
+  "note": "SHINA-III / Instance 10 / 開封直後",
+  "conversion_policy": "legacy mapping only; original historical data is preserved and no measurement values are recalculated or replaced"
+}
