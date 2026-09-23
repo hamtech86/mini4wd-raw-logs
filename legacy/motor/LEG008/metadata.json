@@ -1,0 +1,13 @@
+{
+  "legacy_id": "LEG008",
+  "source_log_id": "MOTOR-000009",
+  "source_path": "motor/11/MOTOR-000009",
+  "device_type": "MOTOR",
+  "instance_id": "11",
+  "measurement_session_id": "fc3914da-96e9-459c-9c2b-8047a53ec9e5",
+  "measurement_condition": "STANDARD_3V30S",
+  "firmware_version": "MOTOR_BREAKIN_V3",
+  "acquired_at": "2026-09-23T15:25:02",
+  "note": "baseline_pwm=58; purpose=MEASUREMENT",
+  "conversion_policy": "source raw.log and source metadata are preserved; no measurement values are recalculated or replaced"
+}
