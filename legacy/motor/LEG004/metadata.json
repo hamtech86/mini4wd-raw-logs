@@ -1,0 +1,8 @@
+{
+  "legacy_id": "LEG004",
+  "device_type": "MOTOR",
+  "instance_id": "9",
+  "measurement_condition": "タブ4",
+  "note": "ATM-2 / Instance 9 / タブ4",
+  "conversion_policy": "legacy mapping only; original historical data is preserved and no measurement values are recalculated or replaced"
+}
