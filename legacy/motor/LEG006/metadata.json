@@ -1,0 +1,13 @@
+{
+  "legacy_id": "LEG006",
+  "source_log_id": "MOTOR-000006",
+  "source_path": "motor/11/MOTOR-000006",
+  "device_type": "MOTOR",
+  "instance_id": "11",
+  "measurement_session_id": "f7ef0d25-391b-4f14-8f51-5c698cee294b",
+  "measurement_condition": "STANDARD_3V30S",
+  "firmware_version": "MOTOR_BREAKIN_V3",
+  "acquired_at": "2026-09-23T17:32:51",
+  "note": "ノーマル　main環境テスト",
+  "conversion_policy": "source raw.log and source metadata are preserved; no measurement values are recalculated or replaced"
+}
