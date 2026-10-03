@@ -1,0 +1,20 @@
+{
+  "log_id": "MOTOR-000021",
+  "device_type": "MOTOR",
+  "device_model": "",
+  "firmware_version": "MOTOR_BREAKIN_V3",
+  "device_instance_id": "7",
+  "channel": null,
+  "motor_id": "7",
+  "battery_id": null,
+  "measurement_session_id": "7da6be9b-eee9-45d5-822f-d99776a8f738",
+  "acquired_at": "2026-10-03T11:27:30",
+  "measurement_condition": "STANDARD_3V30S",
+  "source_reference": "",
+  "notes": "開封直後　スマホ22000rpm",
+  "raw_source": "/home/hamui/mini4wd-ai-system/data/raw_logs/motor/7/MOTOR-000021.log",
+  "registered_at": "2026-10-03T04:24:14.250666+00:00",
+  "repository": "hamtech86/mini4wd-raw-logs",
+  "raw_path": "motor/7/MOTOR-000021/raw.log",
+  "metadata_path": "motor/7/MOTOR-000021/metadata.json"
+}
