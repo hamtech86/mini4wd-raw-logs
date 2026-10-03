@@ -1,0 +1,20 @@
+{
+  "log_id": "MOTOR-000024",
+  "device_type": "MOTOR",
+  "device_model": "",
+  "firmware_version": "MOTOR_BREAKIN_V3",
+  "device_instance_id": "7",
+  "channel": null,
+  "motor_id": "7",
+  "battery_id": null,
+  "measurement_session_id": "437f739d-3442-464f-bf3c-cb0ea5d5ad97",
+  "acquired_at": "2026-10-03T13:18:54",
+  "measurement_condition": "FULL_PACKAGE",
+  "source_reference": "",
+  "notes": "TuneBasic異常稼働後、スマホ23500rpm",
+  "raw_source": "/home/hamui/mini4wd-ai-system/data/raw_logs/motor/7/MOTOR-000024.log",
+  "registered_at": "2026-10-03T04:24:47.635221+00:00",
+  "repository": "hamtech86/mini4wd-raw-logs",
+  "raw_path": "motor/7/MOTOR-000024/raw.log",
+  "metadata_path": "motor/7/MOTOR-000024/metadata.json"
+}
