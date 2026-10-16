@@ -1,0 +1,20 @@
+efault-release/favicons.sqlite-wal
+
+PATH=/home/hamui/.thunderbird/44qx0lmg.default-release/storage.sqlite
+SIZE=4096 bytes MTIME=2026-09-24 23:47:18.965918177 +0900
+d3a1afd2f9f04c12c648f3f1380f088b69cd079959bef2b7c8ab44760fa0aee3  /home/hamui/.thunderbird/44qx0lmg.default-release/storage.sqlite
+
+PATH=/home/hamui/.thunderbird/44qx0lmg.default-release/key4.db
+SIZE=294912 bytes MTIME=2023-11-06 21:28:51.877050178 +0900
+1b45b2f6ca838d7bad639b5cafd21d604f35f66a806eb96030616b50dc2a57c2  /home/hamui/.thunderbird/44qx0lmg.default-release/key4.db
+
+PATH=/home/hamui/.thunderbird/44qx0lmg.default-release/formhistory.sqlite
+SIZE=262144 bytes MTIME=2023-11-06 21:30:10.367977969 +0900
+65075499075e340d6b9cd4d826992a192572466cee7462f8dffc082b338fb704  /home/hamui/.thunderbird/44qx0lmg.default-release/formhistory.sqlite
+
+PATH=/home/hamui/mini4wd-ai-system/database/mini4wd.db
+SIZE=16289792 bytes MTIME=2026-10-14 10:51:33.424716215 +0900
+8636a49f8283bf1eeefb0137d2788b4c3904add9c051b6112971509b9192b3ef  /home/hamui/mini4wd-ai-system/database/mini4wd.db
+
+===== app/database の有無 =====
+hamui@hamui-UL20A:~/mini4wd-ai-system$ 
