@@ -25,6 +25,7 @@ verification/
 - Copy RawLog bytes/text unchanged; do not rewrite, normalize, or reassign the original RawLog.
 - Keep report metadata separate from raw log bodies.
 - A failed upload must leave a recoverable local bundle; secrets/tokens must never be included.
+- GitHub credentials may be entered in the app's masked token dialog/control; the UI-entered token is kept in memory for that app session only and is not written into the bundle or settings files. `MINI4WD_GITHUB_TOKEN` remains supported as an environment-variable alternative.
 - Source/specification changes do not belong in this data directory.
 
 The application must show a preview of the target instance and selected RawLogs and require operator confirmation before upload.
