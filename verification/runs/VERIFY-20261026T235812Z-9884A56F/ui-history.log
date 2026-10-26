@@ -1,0 +1,5 @@
+[2026-10-27 08:42:31 JST] UI ready; hardware identity has not been verified.
+[2026-10-27 08:42:31 JST] Driver input current uses ACS712 #1/A0 current1 from the documented wiring; this is not motor winding current.
+[2026-10-27 08:54:45 JST] Motor INFO identity verified: {'TYPE': 'MOTOR', 'MODEL': 'MOTOR_BREAKIN_V3', 'FW': '3.03', 'BUILD': 'EXPLICIT-ARM-STOP-ACK-20261023-01', 'ID': '000001'}
+[2026-10-27 08:55:12 JST] ERROR --: RuntimeError: SAFETY: 3 consecutive invalid control samples (non-positive INPUT feedback)
+[2026-10-27 08:55:12 JST] Worker reported failure; emergency stop requested and restart latched.
