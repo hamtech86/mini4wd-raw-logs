@@ -1,0 +1,12 @@
+{
+  "log_id": "MOTOR-000001",
+  "device_type": "MOTOR",
+  "device_model": "",
+  "firmware_version": "MOTOR_BREAKIN_V3",
+  "device_instance_id": "3",
+  "measurement_session_id": "3b8c9eb8-c5a3-4845-8b14-d7fd5d2cf1fa",
+  "acquired_at": "2026-10-27T08:55:12",
+  "measurement_condition": "STANDARD_3V30S",
+  "source_reference": "",
+  "notes": "voltage_control_mode=INPUT; purpose=MEASUREMENT"
+}
