@@ -1,0 +1,18 @@
+{
+  "verification_run_id": "VERIFY-20261026T235812Z-9884A56F",
+  "created_at_utc": "2026-10-26T23:58:12.073668+00:00",
+  "repository": "hamtech86/mini4wd-raw-logs",
+  "motor_instance_id": "3",
+  "recipe": "STD-I",
+  "device_identity": {
+    "identity_verified": false
+  },
+  "error": {
+    "code": null,
+    "message": "RuntimeError: SAFETY: 3 consecutive invalid control samples (non-positive INPUT feedback)"
+  },
+  "included_raw_log_ids": [
+    "MOTOR-000001"
+  ],
+  "notes": "Physical observations must be entered in the UI history before sending; CI/source status is not physical verification."
+}
