@@ -1,0 +1,18 @@
+{
+  "verification_run_id": "VERIFY-20261027T000954Z-196C2456",
+  "created_at_utc": "2026-10-27T00:09:54.614883+00:00",
+  "repository": "hamtech86/mini4wd-raw-logs",
+  "motor_instance_id": "3",
+  "recipe": "STD-I",
+  "device_identity": {
+    "identity_verified": false
+  },
+  "error": {
+    "code": null,
+    "message": "RuntimeError: Benchmark stopped"
+  },
+  "included_raw_log_ids": [
+    "MOTOR-000004"
+  ],
+  "notes": "Physical observations must be entered in the UI history before sending; CI/source status is not physical verification."
+}
