@@ -1,0 +1,8 @@
+[2026-10-27 09:02:15 JST] UI ready; hardware identity has not been verified.
+[2026-10-27 09:02:15 JST] Driver input current uses ACS712 #1/A0 current1 from the documented wiring; this is not motor winding current.
+[2026-10-27 09:02:20 JST] Motor INFO identity verified: {'TYPE': 'MOTOR', 'MODEL': 'MOTOR_BREAKIN_V3', 'FW': '3.03', 'BUILD': 'EXPLICIT-ARM-STOP-ACK-20261023-01', 'ID': '000001'}
+[2026-10-27 09:03:08 JST] Measurement run completed. This status does not certify physical stop unless separately observed.
+[2026-10-27 09:07:18 JST] Measurement run completed. This status does not certify physical stop unless separately observed.
+[2026-10-27 09:07:46 JST] Emergency STOP requested; software stop path attempted; physical stop unconfirmed. Restart remains latched.
+[2026-10-27 09:07:46 JST] ERROR --: RuntimeError: Benchmark stopped
+[2026-10-27 09:07:46 JST] Worker reported failure; emergency stop requested and restart latched.
