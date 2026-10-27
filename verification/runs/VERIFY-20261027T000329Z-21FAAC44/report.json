@@ -1,0 +1,18 @@
+{
+  "verification_run_id": "VERIFY-20261027T000329Z-21FAAC44",
+  "created_at_utc": "2026-10-27T00:03:29.381890+00:00",
+  "repository": "hamtech86/mini4wd-raw-logs",
+  "motor_instance_id": "3",
+  "recipe": "STD-I",
+  "device_identity": {
+    "identity_verified": true
+  },
+  "error": {
+    "code": null,
+    "message": null
+  },
+  "included_raw_log_ids": [
+    "MOTOR-000002"
+  ],
+  "notes": "Physical observations must be entered in the UI history before sending; CI/source status is not physical verification."
+}
