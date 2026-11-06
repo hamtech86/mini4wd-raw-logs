@@ -1,0 +1,147 @@
+hamui@hamui-UL20A:~$ python3 - <<'PY'
+from pathlib import Path
+from collections import Counter, defaultdict
+import json
+
+raw = Path.home() / "mini4wd-ai-system/artifacts/310-t18-production-profile/rawlog"
+sid = "fb73be25-debd-4f47-8675-1da614f723ec"
+
+ip = raw / ".command-intents" / sid / "command-intents-v1.jsonl"
+ep = raw / ".transport-evidence" / sid / "transport-evidence-v1.jsonl"
+
+def load(path):
+    with path.open(encoding="utf-8") as f:
+        return [json.loads(line) for line in f if line.strip()]
+
+intents = [x["body"] for x in load(ip)]
+evidence = [x["body"] for x in load(ep)]
+
+print("=== COMMAND INTENTS ===")
+for x in intents:
+    print(
+        x.get("command_id"),
+        x.get("command_type"),
+PY  )   "outcome=", p.get("outcome")age_type"),)"):message_type"))
+=== COMMAND INTENTS ===
+1 ARM 2026-11-06T15:34:14.785Z 06691561-0cea-4194-aa19-98ba07a6c621
+2 PWM_SET 2026-11-06T15:34:14.985Z 06691561-0cea-4194-aa19-98ba07a6c621
+3 DISARM 2026-11-06T15:34:39.738Z 06691561-0cea-4194-aa19-98ba07a6c621
+4 ARM 2026-11-06T15:34:40.336Z 3ddbf405-eb1a-4086-9544-f2148a98a6ec
+5 PWM_SET 2026-11-06T15:34:40.614Z 3ddbf405-eb1a-4086-9544-f2148a98a6ec
+6 DISARM 2026-11-06T15:35:05.417Z 3ddbf405-eb1a-4086-9544-f2148a98a6ec
+7 ARM 2026-11-06T15:35:06.017Z 43ec29b2-d654-458a-8d63-b2b631c6d51b
+8 PWM_SET 2026-11-06T15:35:06.249Z 43ec29b2-d654-458a-8d63-b2b631c6d51b
+9 DISARM 2026-11-06T15:35:30.494Z 43ec29b2-d654-458a-8d63-b2b631c6d51b
+10 ARM 2026-11-06T15:35:31.081Z 3703b7a1-4951-4448-b3be-6f8f15ff9d2a
+11 PWM_SET 2026-11-06T15:35:31.347Z 3703b7a1-4951-4448-b3be-6f8f15ff9d2a
+12 DISARM 2026-11-06T15:35:55.576Z 3703b7a1-4951-4448-b3be-6f8f15ff9d2a
+13 ARM 2026-11-06T15:35:56.163Z 4b2730a4-f3c1-4779-8e7d-b525fce5a4fd
+14 PWM_SET 2026-11-06T15:35:56.407Z 4b2730a4-f3c1-4779-8e7d-b525fce5a4fd
+15 DISARM 2026-11-06T15:36:20.611Z 4b2730a4-f3c1-4779-8e7d-b525fce5a4fd
+16 ARM 2026-11-06T15:36:21.189Z 64aea342-7c77-489a-9570-a305eb27d6ce
+17 PWM_SET 2026-11-06T15:36:21.454Z 64aea342-7c77-489a-9570-a305eb27d6ce
+18 DISARM 2026-11-06T15:36:45.306Z 64aea342-7c77-489a-9570-a305eb27d6ce
+19 ARM 2026-11-06T15:36:45.893Z 4abc0757-8132-4870-9445-9df5ee92c214
+20 PWM_SET 2026-11-06T15:36:46.160Z 4abc0757-8132-4870-9445-9df5ee92c214
+21 DISARM 2026-11-06T15:37:10.584Z 4abc0757-8132-4870-9445-9df5ee92c214
+22 ARM 2026-11-06T15:37:11.160Z 91dd8164-8c17-449d-bff1-3eade81c6811
+23 PWM_SET 2026-11-06T15:37:11.370Z 91dd8164-8c17-449d-bff1-3eade81c6811
+24 DISARM 2026-11-06T15:37:35.966Z 91dd8164-8c17-449d-bff1-3eade81c6811
+25 ARM 2026-11-06T15:37:36.553Z 6ec5cbef-0c59-4873-a395-8cf6e4c2d320
+26 PWM_SET 2026-11-06T15:37:36.763Z 6ec5cbef-0c59-4873-a395-8cf6e4c2d320
+27 DISARM 2026-11-06T15:38:00.673Z 6ec5cbef-0c59-4873-a395-8cf6e4c2d320
+28 ARM 2026-11-06T15:38:01.271Z 05a2d596-2cf4-4bf0-b3f0-4e9086ef231f
+29 PWM_SET 2026-11-06T15:38:01.525Z 05a2d596-2cf4-4bf0-b3f0-4e9086ef231f
+30 DISARM 2026-11-06T15:38:25.240Z 05a2d596-2cf4-4bf0-b3f0-4e9086ef231f
+31 ARM 2026-11-06T15:38:25.839Z 6e98e4e2-7df8-4044-a4f0-55e3355b679b
+32 PWM_SET 2026-11-06T15:38:26.105Z 6e98e4e2-7df8-4044-a4f0-55e3355b679b
+33 DISARM 2026-11-06T15:38:49.810Z 6e98e4e2-7df8-4044-a4f0-55e3355b679b
+34 ARM 2026-11-06T15:38:50.385Z 1174816c-c5a2-460f-abae-93585599788a
+35 PWM_SET 2026-11-06T15:38:50.651Z 1174816c-c5a2-460f-abae-93585599788a
+36 DISARM 2026-11-06T15:39:14.453Z 1174816c-c5a2-460f-abae-93585599788a
+37 ARM 2026-11-06T15:39:15.062Z a0a62a2f-f2c7-41b3-bc29-233e00dba1c1
+38 PWM_SET 2026-11-06T15:39:15.307Z a0a62a2f-f2c7-41b3-bc29-233e00dba1c1
+
+=== EVIDENCE EVENT COUNTS ===
+ACK_MATCHED 38
+ADC_BATCH_ACCEPTED 1287
+ADC_LOSS_WINDOW_SUMMARY 128
+FRAME_RX_DECODED 1326
+FRAME_TX_COMPLETE 39
+FRAME_TX_INTENT 39
+HELLO_ACK_MATCHED 1
+RX_BYTES 1326
+STAGE_CONTEXT_MAP 13
+STAGE_DISARMED 12
+
+=== COMMAND TRANSPORT CORRELATION ===
+0 {'kind': 'HELLO', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [2, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64, 64]}
+1 {'kind': 'ARM', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [4]}
+2 {'kind': 'PWM_SET', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [17]}
+3 {'kind': 'DISARM', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [6]}
+4 {'kind': 'ARM', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [4]}
+5 {'kind': 'PWM_SET', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [17]}
+6 {'kind': 'DISARM', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [6]}
+7 {'kind': 'ARM', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [4]}
+8 {'kind': 'PWM_SET', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [17]}
+9 {'kind': 'DISARM', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [6]}
+10 {'kind': 'ARM', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [4]}
+11 {'kind': 'PWM_SET', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [17]}
+12 {'kind': 'DISARM', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [6]}
+13 {'kind': 'ARM', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [4]}
+14 {'kind': 'PWM_SET', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [17]}
+15 {'kind': 'DISARM', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [6]}
+16 {'kind': 'ARM', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [4]}
+17 {'kind': 'PWM_SET', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [17]}
+18 {'kind': 'DISARM', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [6]}
+19 {'kind': 'ARM', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [4]}
+20 {'kind': 'PWM_SET', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [17]}
+21 {'kind': 'DISARM', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [6]}
+22 {'kind': 'ARM', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [4]}
+23 {'kind': 'PWM_SET', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [17]}
+24 {'kind': 'DISARM', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [6]}
+25 {'kind': 'ARM', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [4]}
+26 {'kind': 'PWM_SET', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [17]}
+27 {'kind': 'DISARM', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [6]}
+28 {'kind': 'ARM', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [4]}
+29 {'kind': 'PWM_SET', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [17]}
+30 {'kind': 'DISARM', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [6]}
+31 {'kind': 'ARM', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [4]}
+32 {'kind': 'PWM_SET', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [17]}
+33 {'kind': 'DISARM', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [6]}
+34 {'kind': 'ARM', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [4]}
+35 {'kind': 'PWM_SET', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [17]}
+36 {'kind': 'DISARM', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [6]}
+37 {'kind': 'ARM', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [4]}
+38 {'kind': 'PWM_SET', 'tx_intent': 1, 'tx_complete': 1, 'tx_error': 0, 'rx': [17]}
+
+=== STOP EVENTS ===
+
+=== LAST 25 EVIDENCE EVENTS ===
+2026-11-06T15:39:34.187Z RX_BYTES command_id= None kind= None message_type= None outcome= None
+2026-11-06T15:39:34.244Z FRAME_RX_DECODED command_id= 0 kind= None message_type= 64 outcome= None
+2026-11-06T15:39:34.287Z ADC_BATCH_ACCEPTED command_id= None kind= None message_type= None outcome= None
+2026-11-06T15:39:34.432Z RX_BYTES command_id= None kind= None message_type= None outcome= None
+2026-11-06T15:39:34.477Z FRAME_RX_DECODED command_id= 0 kind= None message_type= 64 outcome= None
+2026-11-06T15:39:34.520Z ADC_BATCH_ACCEPTED command_id= None kind= None message_type= None outcome= None
+2026-11-06T15:39:34.564Z ADC_LOSS_WINDOW_SUMMARY command_id= None kind= None message_type= None outcome= None
+2026-11-06T15:39:34.721Z RX_BYTES command_id= None kind= None message_type= None outcome= None
+2026-11-06T15:39:34.765Z FRAME_RX_DECODED command_id= 0 kind= None message_type= 64 outcome= None
+2026-11-06T15:39:34.808Z ADC_BATCH_ACCEPTED command_id= None kind= None message_type= None outcome= None
+2026-11-06T15:39:34.964Z RX_BYTES command_id= None kind= None message_type= None outcome= None
+2026-11-06T15:39:34.998Z FRAME_RX_DECODED command_id= 0 kind= None message_type= 64 outcome= None
+2026-11-06T15:39:35.030Z ADC_BATCH_ACCEPTED command_id= None kind= None message_type= None outcome= None
+2026-11-06T15:39:35.153Z RX_BYTES command_id= None kind= None message_type= None outcome= None
+2026-11-06T15:39:35.187Z FRAME_RX_DECODED command_id= 0 kind= None message_type= 64 outcome= None
+2026-11-06T15:39:35.219Z ADC_BATCH_ACCEPTED command_id= None kind= None message_type= None outcome= None
+2026-11-06T15:39:35.364Z RX_BYTES command_id= None kind= None message_type= None outcome= None
+2026-11-06T15:39:35.408Z FRAME_RX_DECODED command_id= 0 kind= None message_type= 64 outcome= None
+2026-11-06T15:39:35.452Z ADC_BATCH_ACCEPTED command_id= None kind= None message_type= None outcome= None
+2026-11-06T15:39:35.597Z RX_BYTES command_id= None kind= None message_type= None outcome= None
+2026-11-06T15:39:35.643Z FRAME_RX_DECODED command_id= 0 kind= None message_type= 64 outcome= None
+2026-11-06T15:39:35.686Z ADC_BATCH_ACCEPTED command_id= None kind= None message_type= None outcome= None
+2026-11-06T15:39:35.930Z RX_BYTES command_id= None kind= None message_type= None outcome= None
+2026-11-06T15:39:35.975Z FRAME_RX_DECODED command_id= 0 kind= None message_type= 64 outcome= None
+2026-11-06T15:39:36.018Z ADC_BATCH_ACCEPTED command_id= None kind= None message_type= None outcome= None
+
+
