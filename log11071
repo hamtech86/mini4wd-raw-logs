@@ -1,0 +1,413 @@
+hamui@hamui-UL20A:~/mini4wd-ai-system-t18-pr190$ 
+cd ~/mini4wd-ai-system-t18-pr190
+
+OUT="$HOME/mini4wd-ai-system-t18-pr190/artifacts/310-t18-production-profile-fixed"
+
+echo "=== Profile report ==="
+cat "$OUT/t18-production-profile.json"
+
+echo "=== Stage timing CSV ==="
+cat "$OUT/t18-production-stage-profile.csv"
+
+echo "=== Storage mount ==="
+findmnt -T "$OUT"
+=== Profile report ===
+{
+  "adc_batches": 3100,
+  "adc_sample_records": 37200,
+  "adc_slots": 37200,
+  "artifact_hashes": {
+    "evidence_bundle_manifest_sha256": "212dc09ae9a589e31d393400b48b6a684e1d4ac3d9b673acac8fe225eb29d162",
+    "evidence_sha256": "733a81db1c334ec0716d8dc684c0e0be93c0491d4f239ad07506f82165215b90",
+    "intent_journal_sha256": "230c5eb985cc0e21011e085ce87aa8a0640eaa9beaaf6c7bdbb5da20560a6d64",
+    "rawlog_manifest_sha256": "c955bc09ff3197d3d81570c7623f12c88e78052cf5d58a75105c485cf5251a2b",
+    "rawlog_records_sha256": "cbedfeb42b0d03a979dd8374b43a6f3964d87c4e7e909cf13123304c4290fd66",
+    "stage_csv_sha256": "c17ffa30d37b6588538555326af4b582c645a18674f6c83c92ff3d5739bfa86a"
+  },
+  "created_at_utc": "2026-11-07T01:35:45+00:00",
+  "environment": {
+    "deterministic_sequence_clock": "injected; advances 10s at each stage boundary",
+    "output_path": "/home/hamui/mini4wd-ai-system-t18-pr190/artifacts/310-t18-production-profile-fixed",
+    "performance_clock": "time.perf_counter_ns",
+    "persistence": "real RawLog, command-intent and Evidence files with production fsync calls",
+    "physical_hardware_used": false,
+    "platform": "Linux-5.15.0-190-generic-x86_64-with-glibc2.35",
+    "python": "3.10.12",
+    "storage_mount": {
+      "filesystem": "ext4",
+      "mountpoint": "/",
+      "source": "/dev/sda3"
+    },
+    "transport": "in-memory protocol-v2 peer; no hardware device opened"
+  },
+  "evidence_bundle_verified": true,
+  "evidence_chain_head": "aa6727d00986d979003becda78c541e8d05cbedf306d4dc3b35f954fbbbda311",
+  "evidence_event_count": 10143,
+  "format": "310-t18-production-path-profile-v1",
+  "log_id": "T18-043a1d87",
+  "loss_window_summary_count": 310,
+  "loss_windows_all_pass": true,
+  "measurement_session_id": "043a1d87-14c2-4cd1-b00c-a325baeb4d7c",
+  "normal_completion_stop_request_count": 1,
+  "pwm_stage_records": 31,
+  "rawlog_validation_errors": [],
+  "stage_budget_ms": 8000,
+  "stage_count": 31,
+  "stage_elapsed_ms": {
+    "max": 33805.21102,
+    "p50": 23940.447634,
+    "p95": 24962.018391,
+    "p99": 33805.21102,
+    "p99_9": 33805.21102
+  },
+  "stages": [
+    {
+      "adc_batches": 100,
+      "adc_slots": 1200,
+      "budget_ms": 8000.0,
+      "elapsed_ms": 24962.018391,
+      "elapsed_ns": 24962018391,
+      "pwm": 0,
+      "stage_index": 0,
+      "within_8s_budget": false
+    },
+    {
+      "adc_batches": 100,
+      "adc_slots": 1200,
+      "budget_ms": 8000.0,
+      "elapsed_ms": 23788.560786,
+      "elapsed_ns": 23788560786,
+      "pwm": 1,
+      "stage_index": 1,
+      "within_8s_budget": false
+    },
+    {
+      "adc_batches": 100,
+      "adc_slots": 1200,
+      "budget_ms": 8000.0,
+      "elapsed_ms": 23769.409498,
+      "elapsed_ns": 23769409498,
+      "pwm": 2,
+      "stage_index": 2,
+      "within_8s_budget": false
+    },
+    {
+      "adc_batches": 100,
+      "adc_slots": 1200,
+      "budget_ms": 8000.0,
+      "elapsed_ms": 24311.720296,
+      "elapsed_ns": 24311720296,
+      "pwm": 3,
+      "stage_index": 3,
+      "within_8s_budget": false
+    },
+    {
+      "adc_batches": 100,
+      "adc_slots": 1200,
+      "budget_ms": 8000.0,
+      "elapsed_ms": 24577.999874,
+      "elapsed_ns": 24577999874,
+      "pwm": 4,
+      "stage_index": 4,
+      "within_8s_budget": false
+    },
+    {
+      "adc_batches": 100,
+      "adc_slots": 1200,
+      "budget_ms": 8000.0,
+      "elapsed_ms": 24161.151131,
+      "elapsed_ns": 24161151131,
+      "pwm": 5,
+      "stage_index": 5,
+      "within_8s_budget": false
+    },
+    {
+      "adc_batches": 100,
+      "adc_slots": 1200,
+      "budget_ms": 8000.0,
+      "elapsed_ms": 23554.722944,
+      "elapsed_ns": 23554722944,
+      "pwm": 6,
+      "stage_index": 6,
+      "within_8s_budget": false
+    },
+    {
+      "adc_batches": 100,
+      "adc_slots": 1200,
+      "budget_ms": 8000.0,
+      "elapsed_ms": 23830.003403,
+      "elapsed_ns": 23830003403,
+      "pwm": 7,
+      "stage_index": 7,
+      "within_8s_budget": false
+    },
+    {
+      "adc_batches": 100,
+      "adc_slots": 1200,
+      "budget_ms": 8000.0,
+      "elapsed_ms": 23888.018033,
+      "elapsed_ns": 23888018033,
+      "pwm": 8,
+      "stage_index": 8,
+      "within_8s_budget": false
+    },
+    {
+      "adc_batches": 100,
+      "adc_slots": 1200,
+      "budget_ms": 8000.0,
+      "elapsed_ms": 23842.359952,
+      "elapsed_ns": 23842359952,
+      "pwm": 9,
+      "stage_index": 9,
+      "within_8s_budget": false
+    },
+    {
+      "adc_batches": 100,
+      "adc_slots": 1200,
+      "budget_ms": 8000.0,
+      "elapsed_ms": 23802.177668,
+      "elapsed_ns": 23802177668,
+      "pwm": 10,
+      "stage_index": 10,
+      "within_8s_budget": false
+    },
+    {
+      "adc_batches": 100,
+      "adc_slots": 1200,
+      "budget_ms": 8000.0,
+      "elapsed_ms": 23805.119656,
+      "elapsed_ns": 23805119656,
+      "pwm": 11,
+      "stage_index": 11,
+      "within_8s_budget": false
+    },
+    {
+      "adc_batches": 100,
+      "adc_slots": 1200,
+      "budget_ms": 8000.0,
+      "elapsed_ms": 23874.749549,
+      "elapsed_ns": 23874749549,
+      "pwm": 12,
+      "stage_index": 12,
+      "within_8s_budget": false
+    },
+    {
+      "adc_batches": 100,
+      "adc_slots": 1200,
+      "budget_ms": 8000.0,
+      "elapsed_ms": 23987.166072,
+      "elapsed_ns": 23987166072,
+      "pwm": 13,
+      "stage_index": 13,
+      "within_8s_budget": false
+    },
+    {
+      "adc_batches": 100,
+      "adc_slots": 1200,
+      "budget_ms": 8000.0,
+      "elapsed_ms": 23573.265966,
+      "elapsed_ns": 23573265966,
+      "pwm": 14,
+      "stage_index": 14,
+      "within_8s_budget": false
+    },
+    {
+      "adc_batches": 100,
+      "adc_slots": 1200,
+      "budget_ms": 8000.0,
+      "elapsed_ms": 23701.614754,
+      "elapsed_ns": 23701614754,
+      "pwm": 15,
+      "stage_index": 15,
+      "within_8s_budget": false
+    },
+    {
+      "adc_batches": 100,
+      "adc_slots": 1200,
+      "budget_ms": 8000.0,
+      "elapsed_ms": 24065.157285,
+      "elapsed_ns": 24065157285,
+      "pwm": 16,
+      "stage_index": 16,
+      "within_8s_budget": false
+    },
+    {
+      "adc_batches": 100,
+      "adc_slots": 1200,
+      "budget_ms": 8000.0,
+      "elapsed_ms": 24634.157612,
+      "elapsed_ns": 24634157612,
+      "pwm": 17,
+      "stage_index": 17,
+      "within_8s_budget": false
+    },
+    {
+      "adc_batches": 100,
+      "adc_slots": 1200,
+      "budget_ms": 8000.0,
+      "elapsed_ms": 24078.448119,
+      "elapsed_ns": 24078448119,
+      "pwm": 18,
+      "stage_index": 18,
+      "within_8s_budget": false
+    },
+    {
+      "adc_batches": 100,
+      "adc_slots": 1200,
+      "budget_ms": 8000.0,
+      "elapsed_ms": 23736.77847,
+      "elapsed_ns": 23736778470,
+      "pwm": 19,
+      "stage_index": 19,
+      "within_8s_budget": false
+    },
+    {
+      "adc_batches": 100,
+      "adc_slots": 1200,
+      "budget_ms": 8000.0,
+      "elapsed_ms": 24133.011212,
+      "elapsed_ns": 24133011212,
+      "pwm": 20,
+      "stage_index": 20,
+      "within_8s_budget": false
+    },
+    {
+      "adc_batches": 100,
+      "adc_slots": 1200,
+      "budget_ms": 8000.0,
+      "elapsed_ms": 24299.353073,
+      "elapsed_ns": 24299353073,
+      "pwm": 21,
+      "stage_index": 21,
+      "within_8s_budget": false
+    },
+    {
+      "adc_batches": 100,
+      "adc_slots": 1200,
+      "budget_ms": 8000.0,
+      "elapsed_ms": 24188.318622,
+      "elapsed_ns": 24188318622,
+      "pwm": 22,
+      "stage_index": 22,
+      "within_8s_budget": false
+    },
+    {
+      "adc_batches": 100,
+      "adc_slots": 1200,
+      "budget_ms": 8000.0,
+      "elapsed_ms": 23635.510122,
+      "elapsed_ns": 23635510122,
+      "pwm": 23,
+      "stage_index": 23,
+      "within_8s_budget": false
+    },
+    {
+      "adc_batches": 100,
+      "adc_slots": 1200,
+      "budget_ms": 8000.0,
+      "elapsed_ms": 23885.340539,
+      "elapsed_ns": 23885340539,
+      "pwm": 24,
+      "stage_index": 24,
+      "within_8s_budget": false
+    },
+    {
+      "adc_batches": 100,
+      "adc_slots": 1200,
+      "budget_ms": 8000.0,
+      "elapsed_ms": 23940.447634,
+      "elapsed_ns": 23940447634,
+      "pwm": 25,
+      "stage_index": 25,
+      "within_8s_budget": false
+    },
+    {
+      "adc_batches": 100,
+      "adc_slots": 1200,
+      "budget_ms": 8000.0,
+      "elapsed_ms": 23954.630695,
+      "elapsed_ns": 23954630695,
+      "pwm": 26,
+      "stage_index": 26,
+      "within_8s_budget": false
+    },
+    {
+      "adc_batches": 100,
+      "adc_slots": 1200,
+      "budget_ms": 8000.0,
+      "elapsed_ms": 23808.524566,
+      "elapsed_ns": 23808524566,
+      "pwm": 27,
+      "stage_index": 27,
+      "within_8s_budget": false
+    },
+    {
+      "adc_batches": 100,
+      "adc_slots": 1200,
+      "budget_ms": 8000.0,
+      "elapsed_ms": 23948.40467,
+      "elapsed_ns": 23948404670,
+      "pwm": 28,
+      "stage_index": 28,
+      "within_8s_budget": false
+    },
+    {
+      "adc_batches": 100,
+      "adc_slots": 1200,
+      "budget_ms": 8000.0,
+      "elapsed_ms": 24365.924933,
+      "elapsed_ns": 24365924933,
+      "pwm": 29,
+      "stage_index": 29,
+      "within_8s_budget": false
+    },
+    {
+      "adc_batches": 100,
+      "adc_slots": 1200,
+      "budget_ms": 8000.0,
+      "elapsed_ms": 33805.21102,
+      "elapsed_ns": 33805211020,
+      "pwm": 30,
+      "stage_index": 30,
+      "within_8s_budget": false
+    }
+  ],
+  "status": "FAIL",
+  "total_profile_elapsed_ms": 753910.085394
+}
+=== Stage timing CSV ===
+stage_index,pwm,adc_batches,adc_slots,elapsed_ns,elapsed_ms,budget_ms,within_8s_budget
+0,0,100,1200,24962018391,24962.018391,8000.0,False
+1,1,100,1200,23788560786,23788.560786,8000.0,False
+2,2,100,1200,23769409498,23769.409498,8000.0,False
+3,3,100,1200,24311720296,24311.720296,8000.0,False
+4,4,100,1200,24577999874,24577.999874,8000.0,False
+5,5,100,1200,24161151131,24161.151131,8000.0,False
+6,6,100,1200,23554722944,23554.722944,8000.0,False
+7,7,100,1200,23830003403,23830.003403,8000.0,False
+8,8,100,1200,23888018033,23888.018033,8000.0,False
+9,9,100,1200,23842359952,23842.359952,8000.0,False
+10,10,100,1200,23802177668,23802.177668,8000.0,False
+11,11,100,1200,23805119656,23805.119656,8000.0,False
+12,12,100,1200,23874749549,23874.749549,8000.0,False
+13,13,100,1200,23987166072,23987.166072,8000.0,False
+14,14,100,1200,23573265966,23573.265966,8000.0,False
+15,15,100,1200,23701614754,23701.614754,8000.0,False
+16,16,100,1200,24065157285,24065.157285,8000.0,False
+17,17,100,1200,24634157612,24634.157612,8000.0,False
+18,18,100,1200,24078448119,24078.448119,8000.0,False
+19,19,100,1200,23736778470,23736.77847,8000.0,False
+20,20,100,1200,24133011212,24133.011212,8000.0,False
+21,21,100,1200,24299353073,24299.353073,8000.0,False
+22,22,100,1200,24188318622,24188.318622,8000.0,False
+23,23,100,1200,23635510122,23635.510122,8000.0,False
+24,24,100,1200,23885340539,23885.340539,8000.0,False
+25,25,100,1200,23940447634,23940.447634,8000.0,False
+26,26,100,1200,23954630695,23954.630695,8000.0,False
+27,27,100,1200,23808524566,23808.524566,8000.0,False
+28,28,100,1200,23948404670,23948.40467,8000.0,False
+29,29,100,1200,24365924933,24365.924933,8000.0,False
+30,30,100,1200,33805211020,33805.21102,8000.0,False
+=== Storage mount ===
+TARGET SOURCE    FSTYPE OPTIONS
+/      /dev/sda3 ext4   rw,relatime,errors=remount-ro
