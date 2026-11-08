@@ -1,0 +1,266 @@
+hamui@hamui-UL20A:~$ cd ~/mini4wd-ai-system || exit 1
+
+python3 - <<'PY'
+from pathlib import Path
+import json
+
+base = Path("artifacts/310-t18-production-profile/rawlog")
+sid = "fb73be25-debd-4f47-8675-1da614f723ec"
+
+paths = {
+    "intents": base / ".command-intents" / sid / "command-intents-v1.jsonl",
+    "evidence": base / ".transport-evidence" / sid / "transport-evidence-v1.jsonl",
+    "records": base / ".recovery/T18-fb73be25/crash-bfa046a0da0d88038a93229bf6407f8b015c32f2dcbd57114feefb2716ab5744/original/records.jsonl",
+}
+
+def load(path):
+    return [json.loads(x) for x in path.read_text().splitlines() if x.strip()]
+
+intents = load(paths["intents"])
+evidence = load(paths["evidence"])
+records = load(paths["records"])
+
+PY  print(json.dumps(x, ensure_ascii=False))se, indent=2))command_id")) == "38":
+=== ALL COMMAND INTENTS ===
+1 ARM 2026-11-06T15:34:14.785Z 06691561-0cea-4194-aa19-98ba07a6c621
+2 PWM_SET 2026-11-06T15:34:14.985Z 06691561-0cea-4194-aa19-98ba07a6c621
+3 DISARM 2026-11-06T15:34:39.738Z 06691561-0cea-4194-aa19-98ba07a6c621
+4 ARM 2026-11-06T15:34:40.336Z 3ddbf405-eb1a-4086-9544-f2148a98a6ec
+5 PWM_SET 2026-11-06T15:34:40.614Z 3ddbf405-eb1a-4086-9544-f2148a98a6ec
+6 DISARM 2026-11-06T15:35:05.417Z 3ddbf405-eb1a-4086-9544-f2148a98a6ec
+7 ARM 2026-11-06T15:35:06.017Z 43ec29b2-d654-458a-8d63-b2b631c6d51b
+8 PWM_SET 2026-11-06T15:35:06.249Z 43ec29b2-d654-458a-8d63-b2b631c6d51b
+9 DISARM 2026-11-06T15:35:30.494Z 43ec29b2-d654-458a-8d63-b2b631c6d51b
+10 ARM 2026-11-06T15:35:31.081Z 3703b7a1-4951-4448-b3be-6f8f15ff9d2a
+11 PWM_SET 2026-11-06T15:35:31.347Z 3703b7a1-4951-4448-b3be-6f8f15ff9d2a
+12 DISARM 2026-11-06T15:35:55.576Z 3703b7a1-4951-4448-b3be-6f8f15ff9d2a
+13 ARM 2026-11-06T15:35:56.163Z 4b2730a4-f3c1-4779-8e7d-b525fce5a4fd
+14 PWM_SET 2026-11-06T15:35:56.407Z 4b2730a4-f3c1-4779-8e7d-b525fce5a4fd
+15 DISARM 2026-11-06T15:36:20.611Z 4b2730a4-f3c1-4779-8e7d-b525fce5a4fd
+16 ARM 2026-11-06T15:36:21.189Z 64aea342-7c77-489a-9570-a305eb27d6ce
+17 PWM_SET 2026-11-06T15:36:21.454Z 64aea342-7c77-489a-9570-a305eb27d6ce
+18 DISARM 2026-11-06T15:36:45.306Z 64aea342-7c77-489a-9570-a305eb27d6ce
+19 ARM 2026-11-06T15:36:45.893Z 4abc0757-8132-4870-9445-9df5ee92c214
+20 PWM_SET 2026-11-06T15:36:46.160Z 4abc0757-8132-4870-9445-9df5ee92c214
+21 DISARM 2026-11-06T15:37:10.584Z 4abc0757-8132-4870-9445-9df5ee92c214
+22 ARM 2026-11-06T15:37:11.160Z 91dd8164-8c17-449d-bff1-3eade81c6811
+23 PWM_SET 2026-11-06T15:37:11.370Z 91dd8164-8c17-449d-bff1-3eade81c6811
+24 DISARM 2026-11-06T15:37:35.966Z 91dd8164-8c17-449d-bff1-3eade81c6811
+25 ARM 2026-11-06T15:37:36.553Z 6ec5cbef-0c59-4873-a395-8cf6e4c2d320
+26 PWM_SET 2026-11-06T15:37:36.763Z 6ec5cbef-0c59-4873-a395-8cf6e4c2d320
+27 DISARM 2026-11-06T15:38:00.673Z 6ec5cbef-0c59-4873-a395-8cf6e4c2d320
+28 ARM 2026-11-06T15:38:01.271Z 05a2d596-2cf4-4bf0-b3f0-4e9086ef231f
+29 PWM_SET 2026-11-06T15:38:01.525Z 05a2d596-2cf4-4bf0-b3f0-4e9086ef231f
+30 DISARM 2026-11-06T15:38:25.240Z 05a2d596-2cf4-4bf0-b3f0-4e9086ef231f
+31 ARM 2026-11-06T15:38:25.839Z 6e98e4e2-7df8-4044-a4f0-55e3355b679b
+32 PWM_SET 2026-11-06T15:38:26.105Z 6e98e4e2-7df8-4044-a4f0-55e3355b679b
+33 DISARM 2026-11-06T15:38:49.810Z 6e98e4e2-7df8-4044-a4f0-55e3355b679b
+34 ARM 2026-11-06T15:38:50.385Z 1174816c-c5a2-460f-abae-93585599788a
+35 PWM_SET 2026-11-06T15:38:50.651Z 1174816c-c5a2-460f-abae-93585599788a
+36 DISARM 2026-11-06T15:39:14.453Z 1174816c-c5a2-460f-abae-93585599788a
+37 ARM 2026-11-06T15:39:15.062Z a0a62a2f-f2c7-41b3-bc29-233e00dba1c1
+38 PWM_SET 2026-11-06T15:39:15.307Z a0a62a2f-f2c7-41b3-bc29-233e00dba1c1
+
+=== EVIDENCE COUNTS ===
+Counter({'RX_BYTES': 1326, 'FRAME_RX_DECODED': 1326, 'ADC_BATCH_ACCEPTED': 1287, 'ADC_LOSS_WINDOW_SUMMARY': 128, 'FRAME_TX_INTENT': 39, 'FRAME_TX_COMPLETE': 39, 'ACK_MATCHED': 38, 'STAGE_CONTEXT_MAP': 13, 'STAGE_DISARMED': 12, 'HELLO_ACK_MATCHED': 1})
+
+=== EVIDENCE FOR FINAL COMMAND 38 ===
+{
+  "device_epoch_id": "3532247213005669889",
+  "direction": "host_internal",
+  "event": "STAGE_CONTEXT_MAP",
+  "event_id": "fad36aeb-8ad1-4b8e-b235-936429bd386b",
+  "event_type": "sample_context_map",
+  "format": "transport-evidence-v1",
+  "host_event_at_utc": "2026-11-06T15:39:15.029Z",
+  "host_event_monotonic_ns": 7143350829503,
+  "host_received_at_utc": null,
+  "host_received_monotonic_ns": null,
+  "measurement_session_id": "fb73be25-debd-4f47-8675-1da614f723ec",
+  "payload": {
+    "command_id": 38,
+    "intended_pwm": 12,
+    "recorded_at_utc": "2026-11-06T15:39:15.029Z",
+    "stage_context_id": "a0a62a2f-f2c7-41b3-bc29-233e00dba1c1",
+    "stage_context_token": 13,
+    "stage_id": "PWM-12"
+  },
+  "previous_hash": "42fe3de4d9ade1040ac613c5e8883eb1329a935c027e412e8a7b63e15e5b1bf3",
+  "schema_version": "transport-evidence-v1"
+}
+{
+  "device_epoch_id": "3532247213005669889",
+  "direction": "host_to_device",
+  "event": "FRAME_TX_INTENT",
+  "event_id": "2289458c-638c-4101-932e-06c7d7c3478b",
+  "event_type": "frame_tx_intent",
+  "format": "transport-evidence-v1",
+  "host_event_at_utc": "2026-11-06T15:39:15.440Z",
+  "host_event_monotonic_ns": 7143761110509,
+  "host_received_at_utc": null,
+  "host_received_monotonic_ns": null,
+  "measurement_session_id": "fb73be25-debd-4f47-8675-1da614f723ec",
+  "payload": {
+    "byte_count": 36,
+    "command_id": 38,
+    "device_epoch_tag": 638649857,
+    "frame_b64": "BU00AhAW+3O+Jd69T0eGdR2mFPcj7AEGESYmAQEDDA0D33kA",
+    "identity": {
+      "boot_id64": 3532247213005669889,
+      "command_id": "38",
+      "command_type": "PWM_SET",
+      "session_id": "fb73be25-debd-4f47-8675-1da614f723ec",
+      "stage_context_id": "a0a62a2f-f2c7-41b3-bc29-233e00dba1c1"
+    },
+    "intent_journal_sha256": "4b5833cb049532044372978f5fc499ddb6e77146d1843c41cd14a4c6cede650a",
+    "kind": "PWM_SET",
+    "measurement_session_id": "fb73be25-debd-4f47-8675-1da614f723ec",
+    "recorded_at_utc": "2026-11-06T15:39:15.439Z"
+  },
+  "previous_hash": "f3ecf2cfe8af66631f05440897caf25f8f80800ca790b359e281181ef190aa19",
+  "schema_version": "transport-evidence-v1"
+}
+{
+  "device_epoch_id": "3532247213005669889",
+  "direction": "host_to_device",
+  "event": "FRAME_TX_COMPLETE",
+  "event_id": "5c8430be-84b0-49a2-a471-36706a5f7433",
+  "event_type": "frame_tx_complete",
+  "format": "transport-evidence-v1",
+  "host_event_at_utc": "2026-11-06T15:39:15.485Z",
+  "host_event_monotonic_ns": 7143805882607,
+  "host_received_at_utc": null,
+  "host_received_monotonic_ns": null,
+  "measurement_session_id": "fb73be25-debd-4f47-8675-1da614f723ec",
+  "payload": {
+    "byte_count": 36,
+    "command_id": 38,
+    "frame_b64": "BU00AhAW+3O+Jd69T0eGdR2mFPcj7AEGESYmAQEDDA0D33kA",
+    "host_write_completed_at_utc": "2026-11-06T15:39:15.484Z",
+    "identity": {
+      "boot_id64": 3532247213005669889,
+      "command_id": "38",
+      "command_type": "PWM_SET",
+      "session_id": "fb73be25-debd-4f47-8675-1da614f723ec",
+      "stage_context_id": "a0a62a2f-f2c7-41b3-bc29-233e00dba1c1"
+    },
+    "intent_journal_sha256": "4b5833cb049532044372978f5fc499ddb6e77146d1843c41cd14a4c6cede650a",
+    "kind": "PWM_SET",
+    "recorded_at_utc": "2026-11-06T15:39:15.484Z"
+  },
+  "previous_hash": "006d1ba2b0cba8e60cf365a2b9a9e2f0dd5fc1bbb1f3889955df135d37420a7b",
+  "schema_version": "transport-evidence-v1"
+}
+{
+  "device_epoch_id": "3532247213005669889",
+  "direction": "device_to_host",
+  "event": "FRAME_RX_DECODED",
+  "event_id": "12a3a931-fedf-4ca8-8db6-c1346c5b92e5",
+  "event_type": "frame_rx_received",
+  "format": "transport-evidence-v1",
+  "host_event_at_utc": "2026-11-06T15:39:15.573Z",
+  "host_event_monotonic_ns": 7143893882142,
+  "host_received_at_utc": "2026-11-06T15:39:15.528Z",
+  "host_received_monotonic_ns": 121000000000,
+  "measurement_session_id": "fb73be25-debd-4f47-8675-1da614f723ec",
+  "payload": {
+    "command_id": 38,
+    "measurement_session_id": "fb73be25-debd-4f47-8675-1da614f723ec",
+    "message_type": 17,
+    "raw_frame_base64": "BU00AhEW+3O+Jd69T0eGdR2mFPcj7AEGESYmAQEBAwwNA/83AA==",
+    "recorded_at_utc": "2026-11-06T15:39:15.572Z",
+    "rx_chunk_event_id": "35f4146b-6c20-4654-9cf5-289d646ac475"
+  },
+  "previous_hash": "0ccd778182235a4849539481411206cfcf9e9fb60740e9e0179c6c6980e2b507",
+  "schema_version": "transport-evidence-v1"
+}
+{
+  "device_epoch_id": "3532247213005669889",
+  "direction": "device_to_host",
+  "event": "ACK_MATCHED",
+  "event_id": "0fe42ebf-dc92-4e00-93b4-2c7fd824a6ba",
+  "event_type": "command_ack_match",
+  "format": "transport-evidence-v1",
+  "host_event_at_utc": "2026-11-06T15:39:15.617Z",
+  "host_event_monotonic_ns": 7143938032841,
+  "host_received_at_utc": "2026-11-06T15:39:15.528Z",
+  "host_received_monotonic_ns": 121000000000,
+  "measurement_session_id": "fb73be25-debd-4f47-8675-1da614f723ec",
+  "payload": {
+    "command_id": 38,
+    "expected_kind": "APPLY_ACK",
+    "identity": {
+      "boot_id64": 3532247213005669889,
+      "command_id": "38",
+      "command_type": "PWM_SET",
+      "session_id": "fb73be25-debd-4f47-8675-1da614f723ec",
+      "stage_context_id": "a0a62a2f-f2c7-41b3-bc29-233e00dba1c1"
+    },
+    "message": {
+      "_host_received_at_utc": "2026-11-06T15:39:15.528Z",
+      "_host_received_monotonic_ns": 121000000000,
+      "_raw_frame_base64": "BU00AhEW+3O+Jd69T0eGdR2mFPcj7AEGESYmAQEBAwwNA/83AA==",
+      "_rx_chunk_event_id": "35f4146b-6c20-4654-9cf5-289d646ac475",
+      "_rx_frame_evidence_event_id": "12a3a931-fedf-4ca8-8db6-c1346c5b92e5",
+      "applied_pwm": 12,
+      "command_id": 38,
+      "device_epoch_tag": 638649857,
+      "kind": "APPLY_ACK",
+      "magic": 13389,
+      "measurement_session_id": "fb73be25-debd-4f47-8675-1da614f723ec",
+      "message_type": 17,
+      "protocol_version": 2,
+      "result": 0,
+      "stage_context_token": 13
+    },
+    "recorded_at_utc": "2026-11-06T15:39:15.616Z"
+  },
+  "previous_hash": "411f01b726f624bfd1ed6e012c22fb878019db5d026b77fa010a2c7b7e323c06",
+  "schema_version": "transport-evidence-v1"
+}
+
+=== LAST 30 TRANSPORT EVENTS ===
+{"event": "FRAME_RX_DECODED", "direction": "device_to_host", "time": "2026-11-06T15:39:33.799Z", "command_id": 0, "kind": null, "identity": null, "message": null}
+{"event": "ADC_BATCH_ACCEPTED", "direction": "device_to_host", "time": "2026-11-06T15:39:33.831Z", "command_id": null, "kind": null, "identity": null, "message": null}
+{"event": "RX_BYTES", "direction": "device_to_host", "time": "2026-11-06T15:39:33.954Z", "command_id": null, "kind": null, "identity": null, "message": null}
+{"event": "FRAME_RX_DECODED", "direction": "device_to_host", "time": "2026-11-06T15:39:33.999Z", "command_id": 0, "kind": null, "identity": null, "message": null}
+{"event": "ADC_BATCH_ACCEPTED", "direction": "device_to_host", "time": "2026-11-06T15:39:34.042Z", "command_id": null, "kind": null, "identity": null, "message": null}
+{"event": "RX_BYTES", "direction": "device_to_host", "time": "2026-11-06T15:39:34.187Z", "command_id": null, "kind": null, "identity": null, "message": null}
+{"event": "FRAME_RX_DECODED", "direction": "device_to_host", "time": "2026-11-06T15:39:34.244Z", "command_id": 0, "kind": null, "identity": null, "message": null}
+{"event": "ADC_BATCH_ACCEPTED", "direction": "device_to_host", "time": "2026-11-06T15:39:34.287Z", "command_id": null, "kind": null, "identity": null, "message": null}
+{"event": "RX_BYTES", "direction": "device_to_host", "time": "2026-11-06T15:39:34.432Z", "command_id": null, "kind": null, "identity": null, "message": null}
+{"event": "FRAME_RX_DECODED", "direction": "device_to_host", "time": "2026-11-06T15:39:34.477Z", "command_id": 0, "kind": null, "identity": null, "message": null}
+{"event": "ADC_BATCH_ACCEPTED", "direction": "device_to_host", "time": "2026-11-06T15:39:34.520Z", "command_id": null, "kind": null, "identity": null, "message": null}
+{"event": "ADC_LOSS_WINDOW_SUMMARY", "direction": "device_to_host", "time": "2026-11-06T15:39:34.564Z", "command_id": null, "kind": null, "identity": null, "message": null}
+{"event": "RX_BYTES", "direction": "device_to_host", "time": "2026-11-06T15:39:34.721Z", "command_id": null, "kind": null, "identity": null, "message": null}
+{"event": "FRAME_RX_DECODED", "direction": "device_to_host", "time": "2026-11-06T15:39:34.765Z", "command_id": 0, "kind": null, "identity": null, "message": null}
+{"event": "ADC_BATCH_ACCEPTED", "direction": "device_to_host", "time": "2026-11-06T15:39:34.808Z", "command_id": null, "kind": null, "identity": null, "message": null}
+{"event": "RX_BYTES", "direction": "device_to_host", "time": "2026-11-06T15:39:34.964Z", "command_id": null, "kind": null, "identity": null, "message": null}
+{"event": "FRAME_RX_DECODED", "direction": "device_to_host", "time": "2026-11-06T15:39:34.998Z", "command_id": 0, "kind": null, "identity": null, "message": null}
+{"event": "ADC_BATCH_ACCEPTED", "direction": "device_to_host", "time": "2026-11-06T15:39:35.030Z", "command_id": null, "kind": null, "identity": null, "message": null}
+{"event": "RX_BYTES", "direction": "device_to_host", "time": "2026-11-06T15:39:35.153Z", "command_id": null, "kind": null, "identity": null, "message": null}
+{"event": "FRAME_RX_DECODED", "direction": "device_to_host", "time": "2026-11-06T15:39:35.187Z", "command_id": 0, "kind": null, "identity": null, "message": null}
+{"event": "ADC_BATCH_ACCEPTED", "direction": "device_to_host", "time": "2026-11-06T15:39:35.219Z", "command_id": null, "kind": null, "identity": null, "message": null}
+{"event": "RX_BYTES", "direction": "device_to_host", "time": "2026-11-06T15:39:35.364Z", "command_id": null, "kind": null, "identity": null, "message": null}
+{"event": "FRAME_RX_DECODED", "direction": "device_to_host", "time": "2026-11-06T15:39:35.408Z", "command_id": 0, "kind": null, "identity": null, "message": null}
+{"event": "ADC_BATCH_ACCEPTED", "direction": "device_to_host", "time": "2026-11-06T15:39:35.452Z", "command_id": null, "kind": null, "identity": null, "message": null}
+{"event": "RX_BYTES", "direction": "device_to_host", "time": "2026-11-06T15:39:35.597Z", "command_id": null, "kind": null, "identity": null, "message": null}
+{"event": "FRAME_RX_DECODED", "direction": "device_to_host", "time": "2026-11-06T15:39:35.643Z", "command_id": 0, "kind": null, "identity": null, "message": null}
+{"event": "ADC_BATCH_ACCEPTED", "direction": "device_to_host", "time": "2026-11-06T15:39:35.686Z", "command_id": null, "kind": null, "identity": null, "message": null}
+{"event": "RX_BYTES", "direction": "device_to_host", "time": "2026-11-06T15:39:35.930Z", "command_id": null, "kind": null, "identity": null, "message": null}
+{"event": "FRAME_RX_DECODED", "direction": "device_to_host", "time": "2026-11-06T15:39:35.975Z", "command_id": 0, "kind": null, "identity": null, "message": null}
+{"event": "ADC_BATCH_ACCEPTED", "direction": "device_to_host", "time": "2026-11-06T15:39:36.018Z", "command_id": null, "kind": null, "identity": null, "message": null}
+
+=== LAST 12 RAWLOG RECORDS ===
+{"schema_version": "2.0.0", "record_type": "ADC_SAMPLE", "record_id": "09e71ae8-dbf9-4df8-b5d2-2752b1834d52", "record_seq": 15459, "log_id": "T18-fb73be25", "measurement_session_id": "fb73be25-debd-4f47-8675-1da614f723ec", "recorded_at_utc": "2026-11-06T15:39:35.730Z", "sample_id": "82b8155e-a443-4247-beed-1aa51d65c98e", "channel": "A0", "sensor": "ACS712 #1", "signal_role": "winding_current", "adc_raw": 512, "adc_resolution_bits": 10, "raw_unit": "count", "device_timestamp_us_u32": 128500000, "device_timestamp_point": "conversion_midpoint", "device_epoch_id": "3105102026110601", "device_elapsed_us": 8500000, "device_sample_sequence": 15420, "host_received_at_utc": "2026-11-06T15:39:35.730Z", "host_received_monotonic_ns": 121000000000, "stage_context_id": "a0a62a2f-f2c7-41b3-bc29-233e00dba1c1", "stage_id": "PWM-12", "stage_assignment": "confirmed", "calibration_id": null, "validity": "valid", "invalid_reason": null}
+{"schema_version": "2.0.0", "record_type": "ADC_SAMPLE", "record_id": "0ae3524e-8b9c-4359-9307-ab17bef0042e", "record_seq": 15460, "log_id": "T18-fb73be25", "measurement_session_id": "fb73be25-debd-4f47-8675-1da614f723ec", "recorded_at_utc": "2026-11-06T15:39:35.730Z", "sample_id": "23feac4e-39bc-46e2-90b1-c8408c5d70c6", "channel": "A1", "sensor": "ACS712 #2", "signal_role": "brush_stability_observation", "adc_raw": 512, "adc_resolution_bits": 10, "raw_unit": "count", "device_timestamp_us_u32": 128508333, "device_timestamp_point": "conversion_midpoint", "device_epoch_id": "3105102026110601", "device_elapsed_us": 8508333, "device_sample_sequence": 15421, "host_received_at_utc": "2026-11-06T15:39:35.730Z", "host_received_monotonic_ns": 121000000000, "stage_context_id": "a0a62a2f-f2c7-41b3-bc29-233e00dba1c1", "stage_id": "PWM-12", "stage_assignment": "confirmed", "calibration_id": null, "validity": "valid", "invalid_reason": null}
+{"schema_version": "2.0.0", "record_type": "ADC_SAMPLE", "record_id": "ab263d70-2e48-41e1-82ef-a879ca2d7ed1", "record_seq": 15461, "log_id": "T18-fb73be25", "measurement_session_id": "fb73be25-debd-4f47-8675-1da614f723ec", "recorded_at_utc": "2026-11-06T15:39:35.730Z", "sample_id": "895aa112-63eb-4174-bca0-3a1f08f6cb83", "channel": "A4", "sensor": "voltage_input_v4", "signal_role": "voltage_v4", "adc_raw": 512, "adc_resolution_bits": 10, "raw_unit": "count", "device_timestamp_us_u32": 128516666, "device_timestamp_point": "conversion_midpoint", "device_epoch_id": "3105102026110601", "device_elapsed_us": 8516666, "device_sample_sequence": 15422, "host_received_at_utc": "2026-11-06T15:39:35.730Z", "host_received_monotonic_ns": 121000000000, "stage_context_id": "a0a62a2f-f2c7-41b3-bc29-233e00dba1c1", "stage_id": "PWM-12", "stage_assignment": "confirmed", "calibration_id": null, "validity": "valid", "invalid_reason": null}
+{"schema_version": "2.0.0", "record_type": "ADC_SAMPLE", "record_id": "abed3fe4-f7d4-49f6-9b64-0933da59969b", "record_seq": 15462, "log_id": "T18-fb73be25", "measurement_session_id": "fb73be25-debd-4f47-8675-1da614f723ec", "recorded_at_utc": "2026-11-06T15:39:35.730Z", "sample_id": "482144aa-0536-4a2d-a5be-f940310722c1", "channel": "A5", "sensor": "voltage_input_v5", "signal_role": "voltage_v5", "adc_raw": 512, "adc_resolution_bits": 10, "raw_unit": "count", "device_timestamp_us_u32": 128525000, "device_timestamp_point": "conversion_midpoint", "device_epoch_id": "3105102026110601", "device_elapsed_us": 8525000, "device_sample_sequence": 15423, "host_received_at_utc": "2026-11-06T15:39:35.730Z", "host_received_monotonic_ns": 121000000000, "stage_context_id": "a0a62a2f-f2c7-41b3-bc29-233e00dba1c1", "stage_id": "PWM-12", "stage_assignment": "confirmed", "calibration_id": null, "validity": "valid", "invalid_reason": null}
+{"schema_version": "2.0.0", "record_type": "ADC_SAMPLE", "record_id": "68eb3a71-f1d0-4958-bc2b-924a7673139c", "record_seq": 15463, "log_id": "T18-fb73be25", "measurement_session_id": "fb73be25-debd-4f47-8675-1da614f723ec", "recorded_at_utc": "2026-11-06T15:39:35.730Z", "sample_id": "c23a32ea-45d8-4a32-9e08-8461a629398d", "channel": "A2", "sensor": "magnetic_sensor", "signal_role": "magnetic_reference", "adc_raw": 512, "adc_resolution_bits": 10, "raw_unit": "count", "device_timestamp_us_u32": 128533333, "device_timestamp_point": "conversion_midpoint", "device_epoch_id": "3105102026110601", "device_elapsed_us": 8533333, "device_sample_sequence": 15424, "host_received_at_utc": "2026-11-06T15:39:35.730Z", "host_received_monotonic_ns": 121000000000, "stage_context_id": "a0a62a2f-f2c7-41b3-bc29-233e00dba1c1", "stage_id": "PWM-12", "stage_assignment": "confirmed", "calibration_id": null, "validity": "valid", "invalid_reason": null}
+{"schema_version": "2.0.0", "record_type": "ADC_SAMPLE", "record_id": "87418727-7bfd-4ea4-a5f7-d8790254f420", "record_seq": 15464, "log_id": "T18-fb73be25", "measurement_session_id": "fb73be25-debd-4f47-8675-1da614f723ec", "recorded_at_utc": "2026-11-06T15:39:35.730Z", "sample_id": "74675b8f-694c-42b9-b14a-f6016771043e", "channel": "A3", "sensor": "thermistor", "signal_role": "thermistor_reference", "adc_raw": 512, "adc_resolution_bits": 10, "raw_unit": "count", "device_timestamp_us_u32": 128541666, "device_timestamp_point": "conversion_midpoint", "device_epoch_id": "3105102026110601", "device_elapsed_us": 8541666, "device_sample_sequence": 15425, "host_received_at_utc": "2026-11-06T15:39:35.731Z", "host_received_monotonic_ns": 121000000000, "stage_context_id": "a0a62a2f-f2c7-41b3-bc29-233e00dba1c1", "stage_id": "PWM-12", "stage_assignment": "confirmed", "calibration_id": null, "validity": "valid", "invalid_reason": null}
+{"schema_version": "2.0.0", "record_type": "ADC_SAMPLE", "record_id": "e6da4984-f4dd-4742-ae49-a8e54b261a08", "record_seq": 15465, "log_id": "T18-fb73be25", "measurement_session_id": "fb73be25-debd-4f47-8675-1da614f723ec", "recorded_at_utc": "2026-11-06T15:39:35.731Z", "sample_id": "219eebb0-7267-4ba2-9213-a7b550926a80", "channel": "A0", "sensor": "ACS712 #1", "signal_role": "winding_current", "adc_raw": 512, "adc_resolution_bits": 10, "raw_unit": "count", "device_timestamp_us_u32": 128550000, "device_timestamp_point": "conversion_midpoint", "device_epoch_id": "3105102026110601", "device_elapsed_us": 8550000, "device_sample_sequence": 15426, "host_received_at_utc": "2026-11-06T15:39:35.731Z", "host_received_monotonic_ns": 121000000000, "stage_context_id": "a0a62a2f-f2c7-41b3-bc29-233e00dba1c1", "stage_id": "PWM-12", "stage_assignment": "confirmed", "calibration_id": null, "validity": "valid", "invalid_reason": null}
+{"schema_version": "2.0.0", "record_type": "ADC_SAMPLE", "record_id": "5268716c-aaae-46cf-b56a-6693fc9dee42", "record_seq": 15466, "log_id": "T18-fb73be25", "measurement_session_id": "fb73be25-debd-4f47-8675-1da614f723ec", "recorded_at_utc": "2026-11-06T15:39:35.731Z", "sample_id": "938599e4-d950-4038-9243-3043ec1fff09", "channel": "A1", "sensor": "ACS712 #2", "signal_role": "brush_stability_observation", "adc_raw": 512, "adc_resolution_bits": 10, "raw_unit": "count", "device_timestamp_us_u32": 128558333, "device_timestamp_point": "conversion_midpoint", "device_epoch_id": "3105102026110601", "device_elapsed_us": 8558333, "device_sample_sequence": 15427, "host_received_at_utc": "2026-11-06T15:39:35.731Z", "host_received_monotonic_ns": 121000000000, "stage_context_id": "a0a62a2f-f2c7-41b3-bc29-233e00dba1c1", "stage_id": "PWM-12", "stage_assignment": "confirmed", "calibration_id": null, "validity": "valid", "invalid_reason": null}
+{"schema_version": "2.0.0", "record_type": "ADC_SAMPLE", "record_id": "8b6165d9-5e89-4306-bc88-e75afa131f82", "record_seq": 15467, "log_id": "T18-fb73be25", "measurement_session_id": "fb73be25-debd-4f47-8675-1da614f723ec", "recorded_at_utc": "2026-11-06T15:39:35.731Z", "sample_id": "9499bda1-73be-46c7-b9ed-927a52d5e46a", "channel": "A4", "sensor": "voltage_input_v4", "signal_role": "voltage_v4", "adc_raw": 512, "adc_resolution_bits": 10, "raw_unit": "count", "device_timestamp_us_u32": 128566666, "device_timestamp_point": "conversion_midpoint", "device_epoch_id": "3105102026110601", "device_elapsed_us": 8566666, "device_sample_sequence": 15428, "host_received_at_utc": "2026-11-06T15:39:35.731Z", "host_received_monotonic_ns": 121000000000, "stage_context_id": "a0a62a2f-f2c7-41b3-bc29-233e00dba1c1", "stage_id": "PWM-12", "stage_assignment": "confirmed", "calibration_id": null, "validity": "valid", "invalid_reason": null}
+{"schema_version": "2.0.0", "record_type": "ADC_SAMPLE", "record_id": "8f26e3db-d0dc-44a0-9c7e-a69a3098ee1a", "record_seq": 15468, "log_id": "T18-fb73be25", "measurement_session_id": "fb73be25-debd-4f47-8675-1da614f723ec", "recorded_at_utc": "2026-11-06T15:39:35.731Z", "sample_id": "201886e7-0d09-4038-b661-dae11a0c63bc", "channel": "A5", "sensor": "voltage_input_v5", "signal_role": "voltage_v5", "adc_raw": 512, "adc_resolution_bits": 10, "raw_unit": "count", "device_timestamp_us_u32": 128575000, "device_timestamp_point": "conversion_midpoint", "device_epoch_id": "3105102026110601", "device_elapsed_us": 8575000, "device_sample_sequence": 15429, "host_received_at_utc": "2026-11-06T15:39:35.731Z", "host_received_monotonic_ns": 121000000000, "stage_context_id": "a0a62a2f-f2c7-41b3-bc29-233e00dba1c1", "stage_id": "PWM-12", "stage_assignment": "confirmed", "calibration_id": null, "validity": "valid", "invalid_reason": null}
+{"schema_version": "2.0.0", "record_type": "ADC_SAMPLE", "record_id": "99d22c04-d321-4aaa-8632-4199decca044", "record_seq": 15469, "log_id": "T18-fb73be25", "measurement_session_id": "fb73be25-debd-4f47-8675-1da614f723ec", "recorded_at_utc": "2026-11-06T15:39:35.731Z", "sample_id": "3b08c2b0-988d-4dbe-b2e8-6c502b986236", "channel": "A2", "sensor": "magnetic_sensor", "signal_role": "magnetic_reference", "adc_raw": 512, "adc_resolution_bits": 10, "raw_unit": "count", "device_timestamp_us_u32": 128583333, "device_timestamp_point": "conversion_midpoint", "device_epoch_id": "3105102026110601", "device_elapsed_us": 8583333, "device_sample_sequence": 15430, "host_received_at_utc": "2026-11-06T15:39:35.731Z", "host_received_monotonic_ns": 121000000000, "stage_context_id": "a0a62a2f-f2c7-41b3-bc29-233e00dba1c1", "stage_id": "PWM-12", "stage_assignment": "confirmed", "calibration_id": null, "validity": "valid", "invalid_reason": null}
+{"schema_version": "2.0.0", "record_type": "ADC_SAMPLE", "record_id": "a5e7cbb4-1a2c-44d6-9d26-612d5556f157", "record_seq": 15470, "log_id": "T18-fb73be25", "measurement_session_id": "fb73be25-debd-4f47-8675-1da614f723ec", "recorded_at_utc": "2026-11-06T15:39:35.731Z", "sample_id": "0a0be218-ee43-49f1-8096-14acde970a57", "channel": "A3", "sensor": "thermistor", "signal_role": "thermistor_reference", "adc_raw": 512, "adc_resolution_bits": 10, "raw_unit": "count", "device_timestamp_us_u32": 128591666, "device_timestamp_point": "conversion_midpoint", "device_epoch_id": "3105102026110601", "device_elapsed_us": 8591666, "device_sample_sequence": 15431, "host_received_at_utc": "2026-11-06T15:39:35.731Z", "host_received_monotonic_ns": 121000000000, "stage_context_id": "a0a62a2f-f2c7-41b3-bc29-233e00dba1c1", "stage_id": "PWM-12", "stage_assignment": "confirmed", "calibration_id": null, "validity": "valid", "invalid_reason": null}
