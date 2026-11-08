@@ -1,0 +1,194 @@
+hamui@hamui-UL20A:~$ cd "$HOME/mini4wd-ai-system"
+
+echo "=== REMOTE ==="
+git remote -v
+
+echo "=== FETCH ==="
+git fetch origin --prune
+
+echo "=== REMOTE TARGET BRANCH ==="
+git ls-remote --heads origin \
+  fix/310-5-t18-durable-batching
+
+echo "=== LOCAL AND REMOTE STATUS ==="
+git branch -avv
+
+echo "=== WORKTREE STATUS ==="
+git status --short --branch
+=== REMOTE ===
+origin	git@github.com:hamtech86/mini4wd-ai-system.git (fetch)
+origin	git@github.com:hamtech86/mini4wd-ai-system.git (push)
+=== FETCH ===
+ssh: connect to host github.com port 22: No route to host
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+=== REMOTE TARGET BRANCH ===
+ssh: connect to host github.com port 22: No route to host
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+=== LOCAL AND REMOTE STATUS ===
+  backup/main-before-resync                                                 d8a15d3 fix: bind motor serial controller and battery instance transport
+  backup/motor-drive-test-recipe-before-main-merge                          048eda8 Fix TARGET voltage command handling
+  backup/pre-fw301-rollback-20261025-011805                                 eecd57e fix: add rest interval to limited TuneBasic direction check (#145)
+  feature/battery-5a-ui                                                     968d68e [origin/feature/battery-5a-ui] fix: set battery UI default port to ttyUSB0
+  feature/battery-tab-ui                                                    4844b31 [origin/feature/battery-tab-ui] document battery benchmark v2 E2E run order
+  feature/breakin-db-integration                                            6c74b24 [origin/feature/breakin-db-integration: behind 10] fix: use conventional score rounding in result formatter
+  feature/instance-manager-rework                                           3b86f17 [origin/feature/instance-manager-rework] Adjust Instance Information form to 2x2 layout
+  feature/instance-manager-ui                                               b2608d8 [origin/feature/instance-manager-ui] fix: display motor model name and code in instance list
+  feature/instance-rawlog-visible                                           080f54c [origin/feature/instance-rawlog-visible: ahead 2] ui: label RawLog visibility controls explicitly
+  feature/main-battery-recipe-integration                                   4712ddd [origin/feature/main-battery-recipe-integration] fix: connect motor analysis estimates to result UI
++ feature/motor-benchmark-implementation                                    3c4b30d (/home/hamui/mini4wd-ai-system-integrated) [origin/feature/motor-benchmark-implementation] Ignore physically impossible thermistor readings
+  feature/motor-drive-test-recipe                                           b2a3da9 [origin/feature/motor-drive-test-recipe: behind 1] test: include MOTOR_DRIVE_TEST in recipe catalog
+  feature/raw-log-github-registration                                       28a98a3 [origin/feature/raw-log-github-registration] Test Raw Log GitHub registration boundary
+  feature/raw-log-manager                                                   9c324a8 [origin/feature/raw-log-manager] Keep unavailable RawLog condition field empty
+  feature/recipe-sequence-complete                                          9edd630 [origin/feature/recipe-sequence-complete] feat: connect Main UI sequence controls to executor
+  feature/ui-remaining-time-authoritative-20261007                          73d3dd1 [origin/feature/ui-remaining-time-authoritative-20261007] Complete phase timing test clock sequence
+  fix/acs712-duplicate-zero-calibration-20261011                            7fef93d [origin/fix/acs712-duplicate-zero-calibration-20261011] ci: add Arduino Uno firmware compile check
+  fix/input-voltage-feedback-path-20261009                                  969a614 [origin/fix/input-voltage-feedback-path-20261009] Complete fake serial port for PWM command regression
+  fix/motor-instance-create-20261005-v2                                     7db51c9 [origin/fix/motor-instance-create-20261005-v2] Add Motor Instance creation regression tests
+  fix/restore-input-feedback-and-acs712-calibration-20261012                642e7f6 [origin/fix/restore-input-feedback-and-acs712-calibration-20261012] ci: compile motor firmware for Arduino Uno
+  fix/tunebasic-input-voltage-hardware-check-20261020                       284b4c3 [origin/fix/tunebasic-input-voltage-hardware-check-20261020] Expose INPUT and terminal voltage readings during sequence execution
+* main                                                                      ba6a922 [origin/main: behind 1] Build motor firmware on main pushes
+  pr-64-input-benchmark                                                     479ab9e Fix canonical benchmark recipe selection routing
+  rescue-current-0ce76d2                                                    0ce76d2 Allow diagnostic TEST brush recipes
+  remotes/origin/HEAD                                                       -> origin/main
+  remotes/origin/anchor/benchmark-normal-20260923                           c65cb17 Fix completion display to exact zero remaining
+  remotes/origin/backend/benchmark-input-4-recipes                          872ae01 docs: record voltage-control target mismatch diagnosis
+  remotes/origin/backup/main-before-integration-reinspection-20260829       d8a15d3 fix: bind motor serial controller and battery instance transport
+  remotes/origin/ci/build-motor-firmware-on-main-20261022                   8e68bc0 Build motor firmware on main pushes
+  remotes/origin/diagnostics/t18-storage-breakdown                          251251a Retain T18 startup recovery before profiling
+  remotes/origin/docs/main-ui-external-design-tunebasic-input-20261023      20f66c2 Document TuneBasic INPUT feedback and current integration state
+  remotes/origin/docs/tunebasic-current-run-procedure-20261024              8983f38 docs: align TuneBasic UI spec with safety gate
+  remotes/origin/feat/motor-benchmark-implementation                        4cf15cb docs: clarify motor benchmark 3V and PWM perturbation conditions
+  remotes/origin/feature/anomaly-skip-20261005                              d6a416c Return INVALID samples as skipped measurements
+  remotes/origin/feature/anomaly-skip-20261007                              a54a30f Merge pull request #61 from hamtech86/fix/motor-instance-create-20261005-v2
+  remotes/origin/feature/battery-5a-ui                                      968d68e fix: set battery UI default port to ttyUSB0
+  remotes/origin/feature/battery-analysis                                   9bf1469 test: validate canonical voltage and discharge inputs
+  remotes/origin/feature/battery-benchmark-persistence                      3c1a0ef test: persist Battery benchmark result without mutating Measurement
+  remotes/origin/feature/battery-benchmark-session                          7d38323 test: validate independent Battery benchmark extraction
+  remotes/origin/feature/battery-data-session-import                        6e05ca7 test: integrate Battery DATA through Session to Benchmark
+  remotes/origin/feature/battery-data-session-ingest                        d24ba18 test: bind Battery DATA to independent session
+  remotes/origin/feature/battery-db-benchmark                               eb63d65 db: load Battery schema during migration
+  remotes/origin/feature/battery-instance-channel-validation                1082c11 test: enforce Battery Instance uniqueness only for simultaneous STARTALL
+  remotes/origin/feature/battery-manual-registration-flow                   6bc1222 fix: initialize Battery schema before opening DB UI
+  remotes/origin/feature/battery-measurement-import                         ada9f87 test: cover verified Battery DATA frame mapping
+  remotes/origin/feature/battery-measurement-import-v2                      cdf2557 docs: define independent STARTALL measurement semantics
+  remotes/origin/feature/battery-measurement-import-v3                      248d20f ci: include Battery Measurement importer test
+  remotes/origin/feature/battery-result-manual-commit                       d8f3010 test: require manual confirmation before official Battery result commit
+  remotes/origin/feature/battery-session-integration                        d34ef35 test: verify independent Battery evaluation sessions
+  remotes/origin/feature/battery-tab-ui                                     4844b31 document battery benchmark v2 E2E run order
+  remotes/origin/feature/benchmark-input-voltage-mode                       60b3106 Apply selected voltage mode to timed benchmark control
+  remotes/origin/feature/benchmark-result-copy                              1793740 feat(ui): add standalone 3V motor benchmark test
+  remotes/origin/feature/breakin-db-integration                             2239e4f measurement: normalize electrical magnitudes at CSV boundary
+  remotes/origin/feature/db-benchmark-voltage-mode                          76b479d Test: verify benchmark and voltage mode separation
+  remotes/origin/feature/db-path-safety-phase2-20261017                     36d42f8 ci: run full regression suite for DB safety branch
+  remotes/origin/feature/evaluation-system-integration                      cb51bde Fix integration test controller import path
+  remotes/origin/feature/firmware-contract-provisional-freeze               ff830d1 docs: distinguish firmware contract CI verification heads
+  remotes/origin/feature/instance-manager-rework                            3b86f17 Adjust Instance Information form to 2x2 layout
+  remotes/origin/feature/instance-manager-ui                                b2608d8 fix: display motor model name and code in instance list
+  remotes/origin/feature/instance-rawlog-visible                            996b35f Merge pull request #54 from hamtech86/feature/raw-log-manager
+  remotes/origin/feature/instance-rawlog-visible-fix                        3e8a80e fix: remove obsolete history buttons from instance manager
+  remotes/origin/feature/issue-75-info-identity-guard                       19a9f01 Fix missing-guard test double setup
+  remotes/origin/feature/ky024-high-speed-capture                           897dfc9 Add bounded KY-024 waveform capture diagnostics
+  remotes/origin/feature/main-analysis-result-contract                      5a0690d test: validate motor estimate presentation contract
+  remotes/origin/feature/main-battery-recipe-integration                    4712ddd fix: connect motor analysis estimates to result UI
+  remotes/origin/feature/motor-analysis-display-safe                        24fc437 feat: add isolated benchmark derived metrics helper
+  remotes/origin/feature/motor-analysis-v2                                  e0fd1cd fix: derive supported weight from required torque model
+  remotes/origin/feature/motor-benchmark-implementation                     3c4b30d Ignore physically impossible thermistor readings
+  remotes/origin/feature/motor-drive-test-recipe                            5b81a29 analysis: add ACS712-2 brush benchmark result model
+  remotes/origin/feature/motor-model-nominal-master                         492655c test: add torque weight estimator coverage
+  remotes/origin/feature/motor-type-weight-estimate                         37cb12a fix: standardize benchmark duration to 30 seconds
+  remotes/origin/feature/physical-verification-report-upload                71bb78b Keep token fallback tests independent of a UI window
+  remotes/origin/feature/raw-log-github-registration                        28a98a3 Test Raw Log GitHub registration boundary
+  remotes/origin/feature/raw-log-local-first                                1d48cbd fix: refresh Raw Log tab after selecting the current instance
+  remotes/origin/feature/raw-log-manager                                    9c324a8 Keep unavailable RawLog condition field empty
+  remotes/origin/feature/recipe-sequence-complete                           9edd630 feat: connect Main UI sequence controls to executor
+  remotes/origin/feature/tunebasic-9v-operator-run-20261024                 366adef fix: gate direct limited TuneBasic controller start
+  remotes/origin/feature/tunebasic-benchmark-runtime                        5fad7c9 TuneBasic: verify approved sequence shape
+  remotes/origin/feature/tunebasic-input-voltage                            3fbf443 Test TuneBasic INPUT voltage control mapping
+  remotes/origin/feature/ui-remaining-time-authoritative-20261007           73d3dd1 Complete phase timing test clock sequence
+  remotes/origin/fix/acs712-duplicate-zero-calibration-20261011             7fef93d ci: add Arduino Uno firmware compile check
+  remotes/origin/fix/benchmark-completion-and-raw-log-ui                    9c78853 Open Raw Logs tab directly from Instance Manager
+  remotes/origin/fix/benchmark-completion-and-raw-log-view                  dbda41a Make Raw Log body directly readable
+  remotes/origin/fix/benchmark-end-boundary-raw-log                         dad44b7 Persist frozen measurement Raw Log only
+  remotes/origin/fix/benchmark-finalization-boundary                        2847787 Test benchmark Raw Log finalization idempotency
+  remotes/origin/fix/benchmark-only-ui-and-stop-safety-20261021             f991c00 Align INFO parser tests with forward-compatible extension-key contract
+  remotes/origin/fix/benchmark-sequence-checklist                           20d0bfd fix: restore Motor Benchmark sequence checklist
+  remotes/origin/fix/benchmark-stop-after-invalid-measurements              894b7c4 Set benchmark PWM state to zero on invalid-feedback stop
+  remotes/origin/fix/block-rearm-after-unconfirmed-stop-20261023            90cee53 Test UI re-arm lockout after unconfirmed stop
+  remotes/origin/fix/confirm-emergency-stop-ack-20261023                    2264bd3 Correct post-latch direct safe-command test expectation
+  remotes/origin/fix/controller-limited-check-firmware-gate-20261024        3b2f42c test: block direct limited TuneBasic start on wrong identity
+  remotes/origin/fix/current-main-explicit-arm-after-info-20261024          b2d3e73 test(ui): cover explicit ARM and retained stop latch
+  remotes/origin/fix/detect-firmware-reboot-during-run-20261024             be27940 test: abort active recipe on unexpected firmware reboot
+  remotes/origin/fix/finish-raw-log-and-serial-ready                        65f72d0 Wait for Arduino boot before reporting serial ready
+  remotes/origin/fix/firmware-build-id-calibration-log-20261013             e647621 Add unique firmware build ID and final ACS712 calibration log
+  remotes/origin/fix/firmware-stop-disables-voltage-control-20261021        47acc27 Align connect-stop race regression with immediate stop-request semantics
+  remotes/origin/fix/gate-full-tunebasic-until-limited-check-20261024       90493ae refactor: remove unreachable full TuneBasic dispatch path
+  remotes/origin/fix/input-voltage-feedback-path                            4afe40b Fix unreachable firmware TARGET voltage assignment
+  remotes/origin/fix/input-voltage-feedback-path-20261009                   969a614 Complete fake serial port for PWM command regression
+  remotes/origin/fix/issue-86-pytest-regressions-20261017                   788d2bd Advance same-direction sequence phases without an idle tick
+  remotes/origin/fix/issue-86-pytest-regressions-pr                         690c601 Exclude hardware serial smoke scripts from full CI suite
+  remotes/origin/fix/issue123-acs712-adc-rail-fault                         38e1ce8 Fail safe on ACS712 ADC rail faults in firmware
+  remotes/origin/fix/issue126-enable-full-tunebasic-20261023                585f7ef Route full TuneBasic selection through sequence panel
+  remotes/origin/fix/issue131-tunebasic-safety-gate                         1fbfb9e test: exercise startup empty poll with real DATA CSV parser
+  remotes/origin/fix/issue85-shared-db-default-20261017                     d145efc Verify normal UI uses shared database path without cwd drift
+  remotes/origin/fix/limited-tunebasic-exact-fw-gate-20261024               50eab0d test: block limited TuneBasic on firmware build mismatch
+  remotes/origin/fix/main-entrypoint-launcher-20261022                      e6e1dd7 Fix integrated UI application entry point
+  remotes/origin/fix/main-ui-controller-context-20261023                    b1a8ce4 fix: integrate host-owned voltage control and CAL snapshots
+  remotes/origin/fix/main-ui-explicit-arm-availability-20261024             bdeaeb6 test: block TuneBasic dispatch until explicit ARM
+  remotes/origin/fix/motor-instance-create-20261005                         a229b9c Add regression tests for Motor Instance creation
+  remotes/origin/fix/motor-instance-create-20261005-v2                      7db51c9 Add Motor Instance creation regression tests
+  remotes/origin/fix/p1-emergency-stop-fail-safe-20261021                   5cc3815 Clear displayed sensor values when STOP is latched
+  remotes/origin/fix/p3-high-side-current-display                           88a6183 Test missing and invalid high-side current values
+  remotes/origin/fix/preserve-first-emergency-stop-result-20261023          4c18177 Test idempotent emergency STOP result preservation
+  remotes/origin/fix/preserve-raw-log-on-emergency-abort-20261024           d05517e test: retain raw log on emergency abort
+  remotes/origin/fix/raw-log-finalize-attribute-error                       6c9b57d Preserve fallback Raw Log source during finalization
+  remotes/origin/fix/raw-log-github-ui-integration                          0cacd1a Fix missing Raw Log GitHub registration UI integration
+  remotes/origin/fix/raw-log-library-and-github-sharing                     26f8d41 Record benchmark type in Raw Log metadata
+  remotes/origin/fix/rawlog-info-header-metadata-main-20261023              f8ad3f2 Fix INFO metadata regression test newline literals
+  remotes/origin/fix/rawlog-instance-path-20261007                          316ba6c Test GitHub storage follows relinked Instance
+  remotes/origin/fix/rawlog-model-firmware-metadata-20261012                19ad3ae Test RawLog INFO header metadata extraction
+  remotes/origin/fix/rawlog-model-firmware-metadata-benchmark-20261012      86d3a03 Fix newline escapes in RawLog metadata test
+  remotes/origin/fix/recipe-combobox-stable-width-20261024                  18b9cc1 test: prevent recipe dropdown width changes
+  remotes/origin/fix/reject-nonrunning-control-data-20261023                a17a98a Cover empty poll between READY and RUN
+  remotes/origin/fix/restore-input-feedback-and-acs712-calibration-20261012 642e7f6 ci: compile motor firmware for Arduino Uno
+  remotes/origin/fix/sequence-adapter-exact-firmware-gate-20261024          ae8c5b0 test: cover sequence adapter firmware and ARM gates
+  remotes/origin/fix/tunebasic-continue-without-data-20261024               147bc32 Bound brush-peak wait when telemetry is absent
+  remotes/origin/fix/tunebasic-data-rejection-diagnostics-20261024          e92e2d2 Show TuneBasic phase flow without hiding per-phase details
+  remotes/origin/fix/tunebasic-input-mode-through-ramps-20261023            a90334c Update TuneBasic regression expectations for INPUT ramps
+  remotes/origin/fix/tunebasic-input-real-hardware-20261020                 923aa91 Document focused TuneBasic INPUT hardware test and stop criteria
+  remotes/origin/fix/tunebasic-input-voltage-hardware-check-20261020        284b4c3 Expose INPUT and terminal voltage readings during sequence execution
+  remotes/origin/fix/tunebasic-input-voltage-issue94                        50d152d test: stop hardware sequence on sustained missing DATA
+  remotes/origin/fix/tunebasic-limited-check-rest-interval-20261024         9e36a37 test: account for limited TuneBasic rest phase
+  remotes/origin/fix/tunebasic-phase-label-horizontal-overflow-20261024     80cc129 test: cover TuneBasic phase detail horizontal overflow
+  remotes/origin/fix/tunebasic-ramp-safety-order-20261024                   51cf4bf test: prevent ramp PWM update on unsafe sample
+  remotes/origin/fix/unique-acs712-firmware-build-id                        67c3d4f Identify ACS712 rail fail-safe firmware build
+  remotes/origin/fix/wire-integrated-ui-controllers-20261023                0647539 Fix integrated UI controller dependency wiring
+  remotes/origin/integration/310-5-unified-candidate                        082fe20 Test legacy context reconciliation and recovery retry
+  remotes/origin/integration/benchmark-anchor-20260923                      1376bc0 Merge benchmark Raw Log finalization fix
+  remotes/origin/integration/benchmark-plus-raw-log-github                  b7d276d Add manual GitHub registration to Raw Log UI
+  remotes/origin/integration/firmware-contract-main-20261017                5cd7ff8 test: assert ARM handshake allows bounded calibration time
+  remotes/origin/integration/firmware-from-872ae                            72f72c7 Add reverse INPUT A5 feedback regression test
+  remotes/origin/main                                                       697a5fd Add explicit MainUI launcher
+  remotes/origin/pr-190                                                     d27db84 Record full production-path T18 hosted-runner evidence
+  remotes/origin/pr-92                                                      f5613e6 Test RESUME is blocked until identity verification
+  remotes/origin/release/bench-tunebasic-20261022                           b1a8ce4 fix: integrate host-owned voltage control and CAL snapshots
+  remotes/origin/rollback/system-fw301-baseline-20261025                    ba6a922 Build motor firmware on main pushes
+  remotes/origin/safety/explicit-arm-all-paths-20261022                     8be986b Clarify ARM race regression assertions
+  remotes/origin/safety/pr63-runnable-baseline-20261016                     e240f3f Document preserved PR63-era runnable baseline and DB safety gate
+  remotes/origin/safety/reject-ui-completion-after-stop-20261022            42c7f67 fix: preserve normal completion reporting outside STOP guard
+  remotes/origin/safety/serial-stop-before-checkpoint-20261022              966d017 test: reject STOP during benchmark finalization
+  remotes/origin/safety/stop-interrupted-phase-status-20261022              2907378 Exercise STOP at distinct active-phase and completion boundaries
+  remotes/origin/scope/benchmark-std-i-full-i-20261023                      9022fce Align Benchmark fallback and error text with INPUT-only scope
+  remotes/origin/stable/breakin-2026-08-16                                  9f4024d fix: align result database update with live SQLite schema
+  remotes/origin/test/p1-identity-ui-integration                            ffc99f1 Verify real SerialController disconnect resets identity and Main UI
+  remotes/origin/test/p2-four-recipe-integration                            45a0128 test: verify finalized benchmark metadata on disk
+  remotes/origin/test/raw-log-benchmark-to-recipe-isolation-20261022        d835551 Fix newline assertion in RawLog isolation regression test
+  remotes/origin/test/tunebasic-9v-phase-contract-20261024                  23b583c test: assert TuneBasic 9V phase voltage contract
+  remotes/origin/test/tunebasic-std-i-shared-path-20261024                  cd655d2 test: wire motor controller in explicit arm fixture
+  remotes/origin/ui/main-window-issue80-20261018                            de1e946 Safety gate and limited INPUT 3V TuneBasic on UI branch
+(END)
