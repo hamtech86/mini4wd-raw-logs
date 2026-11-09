@@ -1,0 +1,137 @@
+hamui@hamui-UL20A:~$ cd "$HOME/mini4wd-ai-system"
+
+echo "=== MARKER CONTENT ==="
+for f in \
+  artifacts/310-t18-production-profile/rawlog/.310-rearm-inhibited \
+  "$HOME/mini4wd-ai-system-t18-pr190/artifacts/310-t18-storage-breakdown/rawlog/.310-rearm-inhibited"
+do
+  if [ -f "$f" ]; then
+    echo "--- $f"
+    cat "$f"
+  fi
+done
+
+echo "=== RAWLOG MANIFEST ==="
+cat artifacts/310-t18-production-profile/rawlog/T18-fb73be25/manifest.json
+
+echo "=== RELEVANT RAWLOG RECORDS ==="
+grep -Ein \
+  'command.intent|command_intent|command.sent|command.ack|STOP_REQ|STOP_ACK|rearm|recovery|terminal|UNKNOWN|ARM' \
+  artifacts/310-t18-production-profile/rawlog/T18-fb73be25/records.jsonl \
+  | tail -n 100
+
+cat artifacts/310-t18-run/310-fsync-report.json
+=== MARKER CONTENT ===
+--- artifacts/310-t18-production-profile/rawlog/.310-rearm-inhibited
+Recovered incomplete 310 work requires explicit command-outcome reconciliation before re-arm. This marker is intentionally persistent and is not cleared automatically.
+--- /home/hamui/mini4wd-ai-system-t18-pr190/artifacts/310-t18-storage-breakdown/rawlog/.310-rearm-inhibited
+Recovered incomplete 310 work requires explicit command-outcome reconciliation before re-arm. This marker is intentionally persistent and is not cleared automatically.
+=== RAWLOG MANIFEST ===
+{"log_id":"T18-fb73be25","measurement_session_id":"fb73be25-debd-4f47-8675-1da614f723ec","started_at_utc":"2026-11-06T15:34:14.362Z","motor_instance_id":null,"device":{"type":"simulated_protocol_peer","model":"protocol-v2-profile-peer","firmware_version":"NOT_PHYSICAL","firmware_build":"T18-PROFILE","firmware_id":"3105102026110601","adc_resolution_bits":10},"measurement_conditions":{"direction":"FWD","voltage_control_mode":"UNKNOWN","sweep_pwm_min":0,"sweep_pwm_max":30,"stage_duration_ms":10000,"schedule_owner":"PYTHON"},"schema_name":"mini4wd.rawlog","schema_version":"2.0.0","measurement_type":"PWM_START_SWEEP_310S","created_at_utc":"2026-11-06T15:40:11.721Z","ended_at_utc":null,"status":"incomplete","planned_stage_count":31,"planned_stage_duration_ms":10000,"planned_total_duration_ms":310000,"record_counts":{"SESSION_EVENT":26,"ADC_SAMPLE":15432,"PWM_STAGE":12}}
+=== RELEVANT RAWLOG RECORDS ===
+2:{"schema_version":"2.0.0","record_type":"SESSION_EVENT","record_id":"ed187e06-b354-42cb-aa28-fafb934022d0","record_seq":2,"log_id":"T18-fb73be25","measurement_session_id":"fb73be25-debd-4f47-8675-1da614f723ec","recorded_at_utc":"2026-11-06T15:34:15.195Z","event":"OTHER","host_monotonic_ns":1000000000,"details":{"kind":"PWM_ACK_RECEIVED","stage_index":0,"command_sent_host_monotonic_ns":1000000000,"ack_received_host_monotonic_ns":1000000000,"command_to_ack_delay_ms":0.0}}
+1203:{"schema_version":"2.0.0","record_type":"SESSION_EVENT","record_id":"5593e99c-b94b-42f5-8a6a-56021361213b","record_seq":1203,"log_id":"T18-fb73be25","measurement_session_id":"fb73be25-debd-4f47-8675-1da614f723ec","recorded_at_utc":"2026-11-06T15:34:40.092Z","event":"OTHER","host_monotonic_ns":11000000000,"details":{"kind":"STAGE_DISARM_ACKNOWLEDGED","stage_index":0,"stage_context_id":"06691561-0cea-4194-aa19-98ba07a6c621","direction":0}}
+1204:{"schema_version":"2.0.0","record_type":"PWM_STAGE","record_id":"ba0162f8-0a6b-44b4-898a-4e7e6c1b36db","record_seq":1204,"log_id":"T18-fb73be25","measurement_session_id":"fb73be25-debd-4f47-8675-1da614f723ec","recorded_at_utc":"2026-11-06T15:34:40.192Z","stage_id":"PWM-00","stage_index":0,"pwm_command":0,"planned_duration_ms":10000,"stage_status":"completed","started_at_utc":"2026-11-06T15:34:15.195Z","ended_at_utc":"2026-11-06T15:34:39.738Z","start_host_monotonic_ns":1000000000,"end_host_monotonic_ns":11000000000,"actual_duration_ms":10000.0,"pwm_command_sent_at_utc":"2026-11-06T15:34:15.063Z","pwm_applied_ack_received_at_utc":"2026-11-06T15:34:15.195Z","output_state":"unknown","stage_context_id":"06691561-0cea-4194-aa19-98ba07a6c621","termination_reason":"duration_elapsed"}
+1205:{"schema_version":"2.0.0","record_type":"SESSION_EVENT","record_id":"3ec99ef3-8956-4dfa-83fd-eb88f6dbdf33","record_seq":1205,"log_id":"T18-fb73be25","measurement_session_id":"fb73be25-debd-4f47-8675-1da614f723ec","recorded_at_utc":"2026-11-06T15:34:40.879Z","event":"OTHER","host_monotonic_ns":11000000000,"details":{"kind":"PWM_ACK_RECEIVED","stage_index":1,"command_sent_host_monotonic_ns":11000000000,"ack_received_host_monotonic_ns":11000000000,"command_to_ack_delay_ms":0.0}}
+2406:{"schema_version":"2.0.0","record_type":"SESSION_EVENT","record_id":"fc255a18-4791-4fc1-a839-7e353a691957","record_seq":2406,"log_id":"T18-fb73be25","measurement_session_id":"fb73be25-debd-4f47-8675-1da614f723ec","recorded_at_utc":"2026-11-06T15:35:05.749Z","event":"OTHER","host_monotonic_ns":21000000000,"details":{"kind":"STAGE_DISARM_ACKNOWLEDGED","stage_index":1,"stage_context_id":"3ddbf405-eb1a-4086-9544-f2148a98a6ec","direction":0}}
+2407:{"schema_version":"2.0.0","record_type":"PWM_STAGE","record_id":"71d523b5-470d-4997-b801-5f7755973944","record_seq":2407,"log_id":"T18-fb73be25","measurement_session_id":"fb73be25-debd-4f47-8675-1da614f723ec","recorded_at_utc":"2026-11-06T15:35:05.871Z","stage_id":"PWM-01","stage_index":1,"pwm_command":1,"planned_duration_ms":10000,"stage_status":"completed","started_at_utc":"2026-11-06T15:34:40.879Z","ended_at_utc":"2026-11-06T15:35:05.417Z","start_host_monotonic_ns":11000000000,"end_host_monotonic_ns":21000000000,"actual_duration_ms":10000.0,"pwm_command_sent_at_utc":"2026-11-06T15:34:40.692Z","pwm_applied_ack_received_at_utc":"2026-11-06T15:34:40.879Z","output_state":"unknown","stage_context_id":"3ddbf405-eb1a-4086-9544-f2148a98a6ec","termination_reason":"duration_elapsed"}
+2408:{"schema_version":"2.0.0","record_type":"SESSION_EVENT","record_id":"e73b8676-9a16-451d-b890-3113995ede57","record_seq":2408,"log_id":"T18-fb73be25","measurement_session_id":"fb73be25-debd-4f47-8675-1da614f723ec","recorded_at_utc":"2026-11-06T15:35:06.514Z","event":"OTHER","host_monotonic_ns":21000000000,"details":{"kind":"PWM_ACK_RECEIVED","stage_index":2,"command_sent_host_monotonic_ns":21000000000,"ack_received_host_monotonic_ns":21000000000,"command_to_ack_delay_ms":0.0}}
+3609:{"schema_version":"2.0.0","record_type":"SESSION_EVENT","record_id":"3b5dfe4d-681f-48c9-a5ca-c6a57a316404","record_seq":3609,"log_id":"T18-fb73be25","measurement_session_id":"fb73be25-debd-4f47-8675-1da614f723ec","recorded_at_utc":"2026-11-06T15:35:30.847Z","event":"OTHER","host_monotonic_ns":31000000000,"details":{"kind":"STAGE_DISARM_ACKNOWLEDGED","stage_index":2,"stage_context_id":"43ec29b2-d654-458a-8d63-b2b631c6d51b","direction":0}}
+3610:{"schema_version":"2.0.0","record_type":"PWM_STAGE","record_id":"573dd471-8a58-4d2e-8ae7-94ee03e1ece9","record_seq":3610,"log_id":"T18-fb73be25","measurement_session_id":"fb73be25-debd-4f47-8675-1da614f723ec","recorded_at_utc":"2026-11-06T15:35:30.948Z","stage_id":"PWM-02","stage_index":2,"pwm_command":2,"planned_duration_ms":10000,"stage_status":"completed","started_at_utc":"2026-11-06T15:35:06.514Z","ended_at_utc":"2026-11-06T15:35:30.494Z","start_host_monotonic_ns":21000000000,"end_host_monotonic_ns":31000000000,"actual_duration_ms":10000.0,"pwm_command_sent_at_utc":"2026-11-06T15:35:06.338Z","pwm_applied_ack_received_at_utc":"2026-11-06T15:35:06.514Z","output_state":"unknown","stage_context_id":"43ec29b2-d654-458a-8d63-b2b631c6d51b","termination_reason":"duration_elapsed"}
+3611:{"schema_version":"2.0.0","record_type":"SESSION_EVENT","record_id":"ba873d9f-ff5a-4945-9e94-d70c9db31ff1","record_seq":3611,"log_id":"T18-fb73be25","measurement_session_id":"fb73be25-debd-4f47-8675-1da614f723ec","recorded_at_utc":"2026-11-06T15:35:31.601Z","event":"OTHER","host_monotonic_ns":31000000000,"details":{"kind":"PWM_ACK_RECEIVED","stage_index":3,"command_sent_host_monotonic_ns":31000000000,"ack_received_host_monotonic_ns":31000000000,"command_to_ack_delay_ms":0.0}}
+4812:{"schema_version":"2.0.0","record_type":"SESSION_EVENT","record_id":"1bfccfe6-4deb-4e1f-88bd-8f8d1aca268b","record_seq":4812,"log_id":"T18-fb73be25","measurement_session_id":"fb73be25-debd-4f47-8675-1da614f723ec","recorded_at_utc":"2026-11-06T15:35:55.919Z","event":"OTHER","host_monotonic_ns":41000000000,"details":{"kind":"STAGE_DISARM_ACKNOWLEDGED","stage_index":3,"stage_context_id":"3703b7a1-4951-4448-b3be-6f8f15ff9d2a","direction":0}}
+4813:{"schema_version":"2.0.0","record_type":"PWM_STAGE","record_id":"bdc93784-31ae-4f53-be37-d7ebb98ef9f7","record_seq":4813,"log_id":"T18-fb73be25","measurement_session_id":"fb73be25-debd-4f47-8675-1da614f723ec","recorded_at_utc":"2026-11-06T15:35:56.019Z","stage_id":"PWM-03","stage_index":3,"pwm_command":3,"planned_duration_ms":10000,"stage_status":"completed","started_at_utc":"2026-11-06T15:35:31.600Z","ended_at_utc":"2026-11-06T15:35:55.576Z","start_host_monotonic_ns":31000000000,"end_host_monotonic_ns":41000000000,"actual_duration_ms":10000.0,"pwm_command_sent_at_utc":"2026-11-06T15:35:31.424Z","pwm_applied_ack_received_at_utc":"2026-11-06T15:35:31.600Z","output_state":"unknown","stage_context_id":"3703b7a1-4951-4448-b3be-6f8f15ff9d2a","termination_reason":"duration_elapsed"}
+4814:{"schema_version":"2.0.0","record_type":"SESSION_EVENT","record_id":"5ace3130-f4e5-4458-84cf-0bf464981141","record_seq":4814,"log_id":"T18-fb73be25","measurement_session_id":"fb73be25-debd-4f47-8675-1da614f723ec","recorded_at_utc":"2026-11-06T15:35:56.617Z","event":"OTHER","host_monotonic_ns":41000000000,"details":{"kind":"PWM_ACK_RECEIVED","stage_index":4,"command_sent_host_monotonic_ns":41000000000,"ack_received_host_monotonic_ns":41000000000,"command_to_ack_delay_ms":0.0}}
+6015:{"schema_version":"2.0.0","record_type":"SESSION_EVENT","record_id":"5138f5cf-007b-497d-833d-40807642dd61","record_seq":6015,"log_id":"T18-fb73be25","measurement_session_id":"fb73be25-debd-4f47-8675-1da614f723ec","recorded_at_utc":"2026-11-06T15:36:20.921Z","event":"OTHER","host_monotonic_ns":51000000000,"details":{"kind":"STAGE_DISARM_ACKNOWLEDGED","stage_index":4,"stage_context_id":"4b2730a4-f3c1-4779-8e7d-b525fce5a4fd","direction":0}}
+6016:{"schema_version":"2.0.0","record_type":"PWM_STAGE","record_id":"e356699e-2d42-4386-a933-40c35f26f293","record_seq":6016,"log_id":"T18-fb73be25","measurement_session_id":"fb73be25-debd-4f47-8675-1da614f723ec","recorded_at_utc":"2026-11-06T15:36:21.033Z","stage_id":"PWM-04","stage_index":4,"pwm_command":4,"planned_duration_ms":10000,"stage_status":"completed","started_at_utc":"2026-11-06T15:35:56.617Z","ended_at_utc":"2026-11-06T15:36:20.611Z","start_host_monotonic_ns":41000000000,"end_host_monotonic_ns":51000000000,"actual_duration_ms":10000.0,"pwm_command_sent_at_utc":"2026-11-06T15:35:56.484Z","pwm_applied_ack_received_at_utc":"2026-11-06T15:35:56.617Z","output_state":"unknown","stage_context_id":"4b2730a4-f3c1-4779-8e7d-b525fce5a4fd","termination_reason":"duration_elapsed"}
+6017:{"schema_version":"2.0.0","record_type":"SESSION_EVENT","record_id":"894fda02-2e61-45a4-b6e6-39d304bd7b0a","record_seq":6017,"log_id":"T18-fb73be25","measurement_session_id":"fb73be25-debd-4f47-8675-1da614f723ec","recorded_at_utc":"2026-11-06T15:36:21.719Z","event":"OTHER","host_monotonic_ns":51000000000,"details":{"kind":"PWM_ACK_RECEIVED","stage_index":5,"command_sent_host_monotonic_ns":51000000000,"ack_received_host_monotonic_ns":51000000000,"command_to_ack_delay_ms":0.0}}
+7218:{"schema_version":"2.0.0","record_type":"SESSION_EVENT","record_id":"7c9acf84-45be-4684-b8c7-476e6f7bdcdd","record_seq":7218,"log_id":"T18-fb73be25","measurement_session_id":"fb73be25-debd-4f47-8675-1da614f723ec","recorded_at_utc":"2026-11-06T15:36:45.649Z","event":"OTHER","host_monotonic_ns":61000000000,"details":{"kind":"STAGE_DISARM_ACKNOWLEDGED","stage_index":5,"stage_context_id":"64aea342-7c77-489a-9570-a305eb27d6ce","direction":0}}
+7219:{"schema_version":"2.0.0","record_type":"PWM_STAGE","record_id":"5aa4f56b-1cdd-4e26-88c7-e6ad9eab7c77","record_seq":7219,"log_id":"T18-fb73be25","measurement_session_id":"fb73be25-debd-4f47-8675-1da614f723ec","recorded_at_utc":"2026-11-06T15:36:45.749Z","stage_id":"PWM-05","stage_index":5,"pwm_command":5,"planned_duration_ms":10000,"stage_status":"completed","started_at_utc":"2026-11-06T15:36:21.719Z","ended_at_utc":"2026-11-06T15:36:45.306Z","start_host_monotonic_ns":51000000000,"end_host_monotonic_ns":61000000000,"actual_duration_ms":10000.0,"pwm_command_sent_at_utc":"2026-11-06T15:36:21.543Z","pwm_applied_ack_received_at_utc":"2026-11-06T15:36:21.719Z","output_state":"unknown","stage_context_id":"64aea342-7c77-489a-9570-a305eb27d6ce","termination_reason":"duration_elapsed"}
+7220:{"schema_version":"2.0.0","record_type":"SESSION_EVENT","record_id":"0d80305c-eb07-470d-b71f-b388f1f07361","record_seq":7220,"log_id":"T18-fb73be25","measurement_session_id":"fb73be25-debd-4f47-8675-1da614f723ec","recorded_at_utc":"2026-11-06T15:36:46.447Z","event":"OTHER","host_monotonic_ns":61000000000,"details":{"kind":"PWM_ACK_RECEIVED","stage_index":6,"command_sent_host_monotonic_ns":61000000000,"ack_received_host_monotonic_ns":61000000000,"command_to_ack_delay_ms":0.0}}
+8421:{"schema_version":"2.0.0","record_type":"SESSION_EVENT","record_id":"18e41ef8-5760-43fc-8b80-58882ac0e1cf","record_seq":8421,"log_id":"T18-fb73be25","measurement_session_id":"fb73be25-debd-4f47-8675-1da614f723ec","recorded_at_utc":"2026-11-06T15:37:10.927Z","event":"OTHER","host_monotonic_ns":71000000000,"details":{"kind":"STAGE_DISARM_ACKNOWLEDGED","stage_index":6,"stage_context_id":"4abc0757-8132-4870-9445-9df5ee92c214","direction":0}}
+8422:{"schema_version":"2.0.0","record_type":"PWM_STAGE","record_id":"c4d278fa-88e8-46bd-956e-69970b7ac03e","record_seq":8422,"log_id":"T18-fb73be25","measurement_session_id":"fb73be25-debd-4f47-8675-1da614f723ec","recorded_at_utc":"2026-11-06T15:37:11.027Z","stage_id":"PWM-06","stage_index":6,"pwm_command":6,"planned_duration_ms":10000,"stage_status":"completed","started_at_utc":"2026-11-06T15:36:46.447Z","ended_at_utc":"2026-11-06T15:37:10.584Z","start_host_monotonic_ns":61000000000,"end_host_monotonic_ns":71000000000,"actual_duration_ms":10000.0,"pwm_command_sent_at_utc":"2026-11-06T15:36:46.260Z","pwm_applied_ack_received_at_utc":"2026-11-06T15:36:46.447Z","output_state":"unknown","stage_context_id":"4abc0757-8132-4870-9445-9df5ee92c214","termination_reason":"duration_elapsed"}
+8423:{"schema_version":"2.0.0","record_type":"SESSION_EVENT","record_id":"b0163b15-bff5-4bff-9b23-275ca0f225c2","record_seq":8423,"log_id":"T18-fb73be25","measurement_session_id":"fb73be25-debd-4f47-8675-1da614f723ec","recorded_at_utc":"2026-11-06T15:37:11.625Z","event":"OTHER","host_monotonic_ns":71000000000,"details":{"kind":"PWM_ACK_RECEIVED","stage_index":7,"command_sent_host_monotonic_ns":71000000000,"ack_received_host_monotonic_ns":71000000000,"command_to_ack_delay_ms":0.0}}
+9624:{"schema_version":"2.0.0","record_type":"SESSION_EVENT","record_id":"0609df61-fa80-4923-9d4e-a669a2787ba7","record_seq":9624,"log_id":"T18-fb73be25","measurement_session_id":"fb73be25-debd-4f47-8675-1da614f723ec","recorded_at_utc":"2026-11-06T15:37:36.308Z","event":"OTHER","host_monotonic_ns":81000000000,"details":{"kind":"STAGE_DISARM_ACKNOWLEDGED","stage_index":7,"stage_context_id":"91dd8164-8c17-449d-bff1-3eade81c6811","direction":0}}
+9625:{"schema_version":"2.0.0","record_type":"PWM_STAGE","record_id":"eefe3a1d-2c39-4def-bec1-e2c1814d2a0c","record_seq":9625,"log_id":"T18-fb73be25","measurement_session_id":"fb73be25-debd-4f47-8675-1da614f723ec","recorded_at_utc":"2026-11-06T15:37:36.419Z","stage_id":"PWM-07","stage_index":7,"pwm_command":7,"planned_duration_ms":10000,"stage_status":"completed","started_at_utc":"2026-11-06T15:37:11.624Z","ended_at_utc":"2026-11-06T15:37:35.965Z","start_host_monotonic_ns":71000000000,"end_host_monotonic_ns":81000000000,"actual_duration_ms":10000.0,"pwm_command_sent_at_utc":"2026-11-06T15:37:11.448Z","pwm_applied_ack_received_at_utc":"2026-11-06T15:37:11.624Z","output_state":"unknown","stage_context_id":"91dd8164-8c17-449d-bff1-3eade81c6811","termination_reason":"duration_elapsed"}
+9626:{"schema_version":"2.0.0","record_type":"SESSION_EVENT","record_id":"21eb5eb6-bd74-45a1-80be-48b3cc960bb0","record_seq":9626,"log_id":"T18-fb73be25","measurement_session_id":"fb73be25-debd-4f47-8675-1da614f723ec","recorded_at_utc":"2026-11-06T15:37:37.030Z","event":"OTHER","host_monotonic_ns":81000000000,"details":{"kind":"PWM_ACK_RECEIVED","stage_index":8,"command_sent_host_monotonic_ns":81000000000,"ack_received_host_monotonic_ns":81000000000,"command_to_ack_delay_ms":0.0}}
+10827:{"schema_version":"2.0.0","record_type":"SESSION_EVENT","record_id":"04e612e5-d13a-49ca-be3a-3098f9ff4cf3","record_seq":10827,"log_id":"T18-fb73be25","measurement_session_id":"fb73be25-debd-4f47-8675-1da614f723ec","recorded_at_utc":"2026-11-06T15:38:01.015Z","event":"OTHER","host_monotonic_ns":91000000000,"details":{"kind":"STAGE_DISARM_ACKNOWLEDGED","stage_index":8,"stage_context_id":"6ec5cbef-0c59-4873-a395-8cf6e4c2d320","direction":0}}
+10828:{"schema_version":"2.0.0","record_type":"PWM_STAGE","record_id":"33d50e8d-201f-474d-8d16-def2c506166e","record_seq":10828,"log_id":"T18-fb73be25","measurement_session_id":"fb73be25-debd-4f47-8675-1da614f723ec","recorded_at_utc":"2026-11-06T15:38:01.127Z","stage_id":"PWM-08","stage_index":8,"pwm_command":8,"planned_duration_ms":10000,"stage_status":"completed","started_at_utc":"2026-11-06T15:37:37.030Z","ended_at_utc":"2026-11-06T15:38:00.673Z","start_host_monotonic_ns":81000000000,"end_host_monotonic_ns":91000000000,"actual_duration_ms":10000.0,"pwm_command_sent_at_utc":"2026-11-06T15:37:36.841Z","pwm_applied_ack_received_at_utc":"2026-11-06T15:37:37.030Z","output_state":"unknown","stage_context_id":"6ec5cbef-0c59-4873-a395-8cf6e4c2d320","termination_reason":"duration_elapsed"}
+10829:{"schema_version":"2.0.0","record_type":"SESSION_EVENT","record_id":"f9ca2a93-9a22-4ed2-a736-f9cf03184be2","record_seq":10829,"log_id":"T18-fb73be25","measurement_session_id":"fb73be25-debd-4f47-8675-1da614f723ec","recorded_at_utc":"2026-11-06T15:38:01.803Z","event":"OTHER","host_monotonic_ns":91000000000,"details":{"kind":"PWM_ACK_RECEIVED","stage_index":9,"command_sent_host_monotonic_ns":91000000000,"ack_received_host_monotonic_ns":91000000000,"command_to_ack_delay_ms":0.0}}
+12030:{"schema_version":"2.0.0","record_type":"SESSION_EVENT","record_id":"6983d616-5c2c-47ce-996f-53c73800b975","record_seq":12030,"log_id":"T18-fb73be25","measurement_session_id":"fb73be25-debd-4f47-8675-1da614f723ec","recorded_at_utc":"2026-11-06T15:38:25.594Z","event":"OTHER","host_monotonic_ns":101000000000,"details":{"kind":"STAGE_DISARM_ACKNOWLEDGED","stage_index":9,"stage_context_id":"05a2d596-2cf4-4bf0-b3f0-4e9086ef231f","direction":0}}
+12031:{"schema_version":"2.0.0","record_type":"PWM_STAGE","record_id":"b7012d3e-86ea-4b71-a310-9d5382f61f17","record_seq":12031,"log_id":"T18-fb73be25","measurement_session_id":"fb73be25-debd-4f47-8675-1da614f723ec","recorded_at_utc":"2026-11-06T15:38:25.706Z","stage_id":"PWM-09","stage_index":9,"pwm_command":9,"planned_duration_ms":10000,"stage_status":"completed","started_at_utc":"2026-11-06T15:38:01.803Z","ended_at_utc":"2026-11-06T15:38:25.240Z","start_host_monotonic_ns":91000000000,"end_host_monotonic_ns":101000000000,"actual_duration_ms":10000.0,"pwm_command_sent_at_utc":"2026-11-06T15:38:01.614Z","pwm_applied_ack_received_at_utc":"2026-11-06T15:38:01.803Z","output_state":"unknown","stage_context_id":"05a2d596-2cf4-4bf0-b3f0-4e9086ef231f","termination_reason":"duration_elapsed"}
+12032:{"schema_version":"2.0.0","record_type":"SESSION_EVENT","record_id":"ec8a955f-8d35-4cad-ab52-a3b7cf535d8a","record_seq":12032,"log_id":"T18-fb73be25","measurement_session_id":"fb73be25-debd-4f47-8675-1da614f723ec","recorded_at_utc":"2026-11-06T15:38:26.370Z","event":"OTHER","host_monotonic_ns":101000000000,"details":{"kind":"PWM_ACK_RECEIVED","stage_index":10,"command_sent_host_monotonic_ns":101000000000,"ack_received_host_monotonic_ns":101000000000,"command_to_ack_delay_ms":0.0}}
+13233:{"schema_version":"2.0.0","record_type":"SESSION_EVENT","record_id":"5a25316b-395d-41b9-ad8e-5db6c5365603","record_seq":13233,"log_id":"T18-fb73be25","measurement_session_id":"fb73be25-debd-4f47-8675-1da614f723ec","recorded_at_utc":"2026-11-06T15:38:50.163Z","event":"OTHER","host_monotonic_ns":111000000000,"details":{"kind":"STAGE_DISARM_ACKNOWLEDGED","stage_index":10,"stage_context_id":"6e98e4e2-7df8-4044-a4f0-55e3355b679b","direction":0}}
+13234:{"schema_version":"2.0.0","record_type":"PWM_STAGE","record_id":"8ba3577b-b72a-445e-ba5b-8cd27c5503f6","record_seq":13234,"log_id":"T18-fb73be25","measurement_session_id":"fb73be25-debd-4f47-8675-1da614f723ec","recorded_at_utc":"2026-11-06T15:38:50.252Z","stage_id":"PWM-10","stage_index":10,"pwm_command":10,"planned_duration_ms":10000,"stage_status":"completed","started_at_utc":"2026-11-06T15:38:26.370Z","ended_at_utc":"2026-11-06T15:38:49.809Z","start_host_monotonic_ns":101000000000,"end_host_monotonic_ns":111000000000,"actual_duration_ms":10000.0,"pwm_command_sent_at_utc":"2026-11-06T15:38:26.193Z","pwm_applied_ack_received_at_utc":"2026-11-06T15:38:26.370Z","output_state":"unknown","stage_context_id":"6e98e4e2-7df8-4044-a4f0-55e3355b679b","termination_reason":"duration_elapsed"}
+13235:{"schema_version":"2.0.0","record_type":"SESSION_EVENT","record_id":"61a75e4d-3e1c-421d-ac27-aad3324a2dfb","record_seq":13235,"log_id":"T18-fb73be25","measurement_session_id":"fb73be25-debd-4f47-8675-1da614f723ec","recorded_at_utc":"2026-11-06T15:38:50.916Z","event":"OTHER","host_monotonic_ns":111000000000,"details":{"kind":"PWM_ACK_RECEIVED","stage_index":11,"command_sent_host_monotonic_ns":111000000000,"ack_received_host_monotonic_ns":111000000000,"command_to_ack_delay_ms":0.0}}
+14436:{"schema_version":"2.0.0","record_type":"SESSION_EVENT","record_id":"6601a52c-3cf9-4cff-9495-bdfb635436be","record_seq":14436,"log_id":"T18-fb73be25","measurement_session_id":"fb73be25-debd-4f47-8675-1da614f723ec","recorded_at_utc":"2026-11-06T15:39:14.807Z","event":"OTHER","host_monotonic_ns":121000000000,"details":{"kind":"STAGE_DISARM_ACKNOWLEDGED","stage_index":11,"stage_context_id":"1174816c-c5a2-460f-abae-93585599788a","direction":0}}
+14437:{"schema_version":"2.0.0","record_type":"PWM_STAGE","record_id":"ec60559d-bdad-4084-b8ab-bacd7bd8ecfb","record_seq":14437,"log_id":"T18-fb73be25","measurement_session_id":"fb73be25-debd-4f47-8675-1da614f723ec","recorded_at_utc":"2026-11-06T15:39:14.918Z","stage_id":"PWM-11","stage_index":11,"pwm_command":11,"planned_duration_ms":10000,"stage_status":"completed","started_at_utc":"2026-11-06T15:38:50.916Z","ended_at_utc":"2026-11-06T15:39:14.453Z","start_host_monotonic_ns":111000000000,"end_host_monotonic_ns":121000000000,"actual_duration_ms":10000.0,"pwm_command_sent_at_utc":"2026-11-06T15:38:50.739Z","pwm_applied_ack_received_at_utc":"2026-11-06T15:38:50.916Z","output_state":"unknown","stage_context_id":"1174816c-c5a2-460f-abae-93585599788a","termination_reason":"duration_elapsed"}
+14438:{"schema_version":"2.0.0","record_type":"SESSION_EVENT","record_id":"32bd6f69-9319-43d5-a3d0-5e8c0b7a96f3","record_seq":14438,"log_id":"T18-fb73be25","measurement_session_id":"fb73be25-debd-4f47-8675-1da614f723ec","recorded_at_utc":"2026-11-06T15:39:15.660Z","event":"OTHER","host_monotonic_ns":121000000000,"details":{"kind":"PWM_ACK_RECEIVED","stage_index":12,"command_sent_host_monotonic_ns":121000000000,"ack_received_host_monotonic_ns":121000000000,"command_to_ack_delay_ms":0.0}}
+=== T18 PROFILE RESULT ===
+{
+  "budget": {
+    "available_ns": 9000000000,
+    "max_plus_margin_ns": 1684258623,
+    "max_within_budget": true,
+    "p999_plus_margin_ns": 1261742767,
+    "p999_within_budget": true,
+    "profile_within_budget": true
+  },
+  "directory_fsync": {
+    "count": 10000,
+    "failure_count": 0,
+    "max_ns": 651174569,
+    "p50_ns": 22068950,
+    "p95_ns": 22605251,
+    "p999_ns": 217663550,
+    "p99_ns": 44245682
+  },
+  "file_fsync": {
+    "count": 10000,
+    "failure_count": 0,
+    "max_ns": 220194866,
+    "p50_ns": 44087744,
+    "p95_ns": 44182545,
+    "p999_ns": 161813288,
+    "p99_ns": 56513235
+  },
+  "fsync_failures": {
+    "directory": [],
+    "file": []
+  },
+  "host": {
+    "machine": "x86_64",
+    "mount": {
+      "filesystem": "ext4",
+      "mountpoint": "/",
+      "options": "rw,relatime,errors=remount-ro",
+      "source": "/dev/sda3"
+    },
+    "python": "3.10.12 (main, Jun 22 2026, 18:55:27) [GCC 11.4.0]",
+    "release": "5.15.0-190-generic",
+    "st_dev": 2051,
+    "system": "Linux",
+    "target_path": "/home/hamui/mini4wd-ai-system/artifacts/310-t18-run"
+  },
+  "limitations": [
+    "Host filesystem synthetic benchmark only; not a power-loss certification.",
+    "The paired sum is a profile estimate, not a guarantee for a different journal workload.",
+    "No serial, firmware, MCU, driver, motor, or physical STOP behavior is tested."
+  ],
+  "paired_file_plus_directory_fsync": {
+    "count": 10000,
+    "max_ns": 684258623,
+    "p50_ns": 66155738,
+    "p95_ns": 72162060,
+    "p999_ns": 261742767,
+    "p99_ns": 110172843
+  },
+  "parameters": {
+    "margin_ms": 1000,
+    "samples": 10000,
+    "stage_ms": 10000,
+    "stop_reserve_ms": 1000
+  },
+  "profile": "310-5-T18-fsync-v1",
+  "samples_file": "310-fsync-samples.csv",
+  "samples_sha256": "1a0891adc4d68905d30ac190f833bb94244cc031c061c3fdd4ff47e8bfaaa420"
+}
